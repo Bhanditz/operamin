@@ -17,23 +17,11 @@
 		<br>
 		<br>
 		<br>
-		<a href="../some-relative-link/file"
-			onclick="this.href = 'javascript:'+console.log('something has stopped the link'); "
-			target="_blank">Test me out</a>
-		<br>
-		<br>
-		<br>
-		<br>
-		<a href="" onclick="func(); return false;">asdf</a>
-		<br>
-		<br>
-		<br>
-		<br>
 		<form>
-		  <input type="radio" name="gender" value="male" checked> Bet 1<br>
-		  <input type="radio" name="gender" value="female"> Bet 2<br>
-		  <input type="radio" name="gender" value="other"> Bet 3
-		</form> 
+		  <input type="radio" name="gender" value="male" checked onclick="getData(event)"> Bet 1 <span class="betslip--count slip-counter">0</span><br>
+		  <input type="radio" name="gender" value="female" onclick="getData(event)"> Bet 2<br>
+		  <input type="radio" name="gender" value="other" onclick="getData(event)"> Bet 3
+		</form>
 		<br>
 		<br>
 		<br>
