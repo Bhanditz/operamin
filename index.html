@@ -1275,11 +1275,12 @@
 						count += 1;
 						$(".slip-counter").html(count);
 						// document.addEventListener("DOMContentLoaded", load, false);
+						window.location.reload(true);
 				});
 			})();
-			window.addEventListener("load", function load(event){
-			    window.removeEventListener("load", load, false); //remove listener, no longer needed
-			    myExtension.init();
-			},false);
+			// window.addEventListener("load", function load(event){
+			//     window.removeEventListener("load", load, false); //remove listener, no longer needed
+			//     myExtension.init();
+			// },false);
 		</script>
 </body></html>
