@@ -155,7 +155,7 @@
                     <tbody><tr>
 
                       <td class="">
-												<button type="submit" style="cursor:none;" onclick="return false;">Click Me! <span class="betslip--count slip-counter">0</span></button>
+												<button type="submit" style="pointer:click;" onclick="return false;">Click Me! <span class="betslip--count slip-counter">0</span></button>
 											</td>
 
                     </tr>
@@ -1275,6 +1275,7 @@
 					count += 1;
 					$(".slip-counter").html(count);
 					// document.addEventListener("DOMContentLoaded", load, false);
+					window.removeEventListener("load", load, false);
 			});
 		})();
 		</script>
