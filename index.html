@@ -12,7 +12,21 @@
 		<br>
 		<br>
 		<br>
-		<p onclick="testMe('what now');" id="clickme">p element click me</p>
+		<button
+		href="javascript:;"
+		hometeam="Gresik United"
+		oddtype="3 Way"
+		bettype="prematch"
+		awayteam="PS Tni"
+		oddvalue="10.58"
+		target="."
+		odd-key="1"
+		parentmatchid="11504275"
+		id="409483"
+		custom="409483101"
+		sub-type-id="10"
+		special-value-value="0"
+		onclick="return false; addBet(this.getAttribute('hometeam'))"><span class="pick">1 </span><span class="odd">10.58</span></button>
 		<br>
 		<br>
 		<br>
@@ -21,9 +35,9 @@
 		<!-- <script type="text/javascript" src="betika_files/betslip.min.js"></script> -->
 		<script type="text/javascript">
 
-		function testMe(value) {
-			window.stop();
-			document.getElementById('clickme').innerHTML = '<p>'+ value + '</p>';
+		function addBet(value) {
+			console.log(value);
+			return false;
 		}
 		</script>
 	</body>
