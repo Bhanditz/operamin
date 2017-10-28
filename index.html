@@ -38,20 +38,20 @@
 		<br>
 		<br>
 		<br>
-		<p>p element click me</p>
+		<p onclick="testMe(event); return false;" id="clickme">p element click me</p>
 		<br>
 		<br>
 		<br>
 		<br>
 		<input type="checkbox" value="Click me check">
 		<script src="betika_files/jquery.min.js" type="text/javascript"></script>
-		<script type="text/javascript" src="betika_files/betslip.min.js"></script>
+		<!-- <script type="text/javascript" src="betika_files/betslip.min.js"></script> -->
 		<script type="text/javascript">
-		$( "p" ).click(function( event ) {
+
+		function testMe(event) {
 			event.stopPropagation();
-			// Do something
-			$( "p" ).addClass('red');
-		});
+			document.getElementById('clickme').innerHTML = '<p>Hallo world</d>';
+		}
 		</script>
 	</body>
 </html>
