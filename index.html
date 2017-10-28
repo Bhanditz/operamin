@@ -8,15 +8,15 @@
 		<link rel="stylesheet" href="./styles/main.css">
 	</head>
 	<body>
-		<p>This example uses the addEventListener() method to execute a function when a user clicks anywhere in the document.</p>
+		<p>This example uses the addEventListener() method to execute a function when a user clicks on a button.</p>
 
-		<p id="demo">
+		<button id="myBtn">Try it</button>
 
 		<script>
-		document.addEventListener("click", myFunction);
+		document.getElementById("myBtn").addEventListener("click", myFunction);
 
 		function myFunction() {
-		    document.getElementById("demo").innerHTML = "Hello World";
+		    alert ("Hello World!");
 		}
 		</script>
 		<!-- <script type="text/javascript">
