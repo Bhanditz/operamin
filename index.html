@@ -18,13 +18,13 @@
 
 		<h3><a name="menu">Menu</a></h3>
 		<ul>
-		<li><a href="#a001">Jump to a001</a></li>
+		<li><a href="#a001">Jump to a001</a><a name="a001">a001</a></li>
 		<li><a href="#a002">Jump to a002</a></li>
 		<li><a href="#a003">Jump to a003</a></li>
 		</ul>
 
-		<h3><a name="a001">a001</a></h3>
-		<p>paragraph text ...</p>
+		<!-- <h3><a name="a001">a001</a></h3>
+		<p>paragraph text ...</p> -->
 
 		<h3><a name="a002">a002</a></h3>
 		<p>paragraph text ...</p>
@@ -35,7 +35,7 @@
 		<hr>
 
 		<p><a href="#menu">Jump to Menu</a></p>
-		
+
 		<!-- <script type="text/javascript">
 
 		function addBet(value) {
@@ -65,11 +65,12 @@
 		  window.onload = function() {
 		    var allLinks = document.getElementsByTagName('a');
 				alert(allLinks.length);
-		    if(allLinks.length>0 && !allLinks[0].click)
-		      for(var i=0; i < allLinks.length; i++)
-		        allLinks[i].click = function() {
-		          if(this["onclick"]) this["onclick"](); else location.href = this.href;
-		          return false; };
+		    if(allLinks.length>0 && !allLinks[0].click) {
+		      for(var i=0; i < allLinks.length; i++) {
+						location.href = this.href;
+						return false;
+					}
+		    }
 		  }
 		</script>
 	</body>
