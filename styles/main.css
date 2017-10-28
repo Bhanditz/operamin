@@ -10,3 +10,7 @@
 input:checked + .show-on-checkbox {
   display: block;
 }
+
+.red {
+  color: red;
+}
