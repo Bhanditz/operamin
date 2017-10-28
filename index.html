@@ -12,7 +12,7 @@
 		<br>
 		<br>
 		<br>
-		<button href="javascript:'';" class="btn">Click Me <span class="betslip--count slip-counter">0</span></button>
+		<button type="button">Click Me <span class="betslip--count slip-counter">0</span></button>
 		<br>
 		<br>
 		<br>
@@ -26,17 +26,15 @@
 		<br>
 		<br>
 		<br>
+			<label for="hidden-cb">Click me</label>
+			<input type="checkbox" id="hidden-cb" class="hidden-cb">
+			<div class="show-on-checkbox" id="target">Hey, here I am!</div>
+		<br>
+		<br>
+		<br>
+		<br>
 
 		<script src="betika_files/jquery.min.js" type="text/javascript"></script>
 		<script type="text/javascript" src="betika_files/betslip.min.js"></script>
-
-		<script>
-			// Warning before leaving the page (back button, or outgoinglink)
-			window.onbeforeunload = function() {
-			   return "Do you really want to leave our brilliant application?";
-			   //if we return nothing here (just calling return;) then there will be no pop-up question at all
-			   //return;
-			};
-		</script>
 	</body>
 </html>
