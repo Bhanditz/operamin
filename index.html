@@ -10,13 +10,12 @@
 	<body>
 		<p>This example uses the addEventListener() method to execute a function when a user clicks on a button.</p>
 
-		<button id="myBtn">Try me</button>
+		<p id="myBtn">Try again</p>
 
 		<script>
 		document.getElementById("myBtn").addEventListener("click", myFunction(this.id));
 
 		function myFunction(value) {
-			return false;
 		    alert (value);
 		}
 		</script>
