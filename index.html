@@ -15,7 +15,9 @@
 		<script>
 		document.getElementById("myBtn").addEventListener("click", myFunction, false);
 
-		function myFunction() {
+		function myFunction(event) {
+			event.preventDefault();
+			window.stop();
 		    alert ("Hello World!");
 		}
 		</script>
