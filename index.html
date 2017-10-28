@@ -8,21 +8,9 @@
 		<link rel="stylesheet" href="./styles/main.css">
 	</head>
 	<body>
-		<p>This example uses the addEventListener() method to execute a function when a user clicks on a button.</p>
-
-		<p id="myBtn">Try always</p>
-
-		<script>
-		// document.getElementById("myBtn").addEventListener("click", myFunction(this.id));
-		//
-		// function myFunction(value) {
-		//     alert (value);
-		// }
-
-		document.getElementById("myBtn").addEventListener('sumbit', function(event){
-			alert('hallo world');
-		});
-		</script>
+		<a href="#" class="counter">Interesante</a>
+		<br>
+		<span class="betslip--count slip-counter">0</span>
 		<!-- <script type="text/javascript">
 
 		function addBet(value) {
@@ -47,5 +35,18 @@
 		  document.body.appendChild(mydiv);
 		}, false);
 		</script> -->
+		<script type="text/javascript" src="./betika_files/jquery.min.js"></script>
+		<script>
+		$(function(){
+				var counter = 0;
+				$("a.counter").click(function()
+				{
+						counter += 1;
+						$(".slip-counter").html(counter);
+						$.get("set_interesantes.php?n=Frank Melo&u=f6e79cfe9c0ecc4c08dac4c860c4802b&back=http://localhost:8085/Something/success/profile.php?search_user=f6e79cfe9c0ecc4c08dac4c860c4802b&p=12&sa=f6e79cfe9c0ecc4c08dac4c860c4802b&i=2345123&dl=&iv=1" );
+						return false; // prevent default browser refresh on "#" link
+				});
+		});
+		</script>
 	</body>
 </html>
