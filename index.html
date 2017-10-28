@@ -13,20 +13,20 @@
 		<br>
 		<br>
 		<button
-		href="javascript:;"
-		hometeam="Gresik United"
-		oddtype="3 Way"
-		bettype="prematch"
-		awayteam="PS Tni"
-		oddvalue="10.58"
-		target="."
-		odd-key="1"
-		parentmatchid="11504275"
-		id="409483"
-		custom="409483101"
-		sub-type-id="10"
-		special-value-value="0"
-		onclick="return false; addBet(this.getAttribute('hometeam'))"><span class="pick">1 </span><span class="odd">10.58</span></button>
+			href="javascript:;"
+			hometeam="Gresik United"
+			oddtype="3 Way"
+			bettype="prematch"
+			awayteam="PS Tni"
+			oddvalue="10.58"
+			target="."
+			odd-key="1"
+			parentmatchid="11504275"
+			id="409483"
+			custom="409483101"
+			sub-type-id="10"
+			special-value-value="0"
+			onclick="return false; addBet(this.getAttribute('hometeam'))"><span class="pick">1 </span><span class="odd">10.58</span></button>
 		<br>
 		<br>
 		<br>
@@ -39,6 +39,22 @@
 			console.log(value);
 			return false;
 		}
+
+		addEventListener('load', function (e) {
+		  if (!document.body)
+		  {
+		    return;
+		  }
+		  var mydiv = document.createElement('div');
+		  mydiv.style.position = 'fixed';
+		  mydiv.style.top = '0px';
+		  mydiv.style.right = '0px';
+		  mydiv.style.border = '1px solid #000';
+		  mydiv.style.backgroundColor = '#fff';
+		  mydiv.style.color = '#000';
+		  mydiv.appendChild(document.createTextNode(document.compatMode))
+		  document.body.appendChild(mydiv);
+		}, false);
 		</script>
 	</body>
 </html>
