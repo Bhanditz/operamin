@@ -31,6 +31,11 @@
 		<br>
 		<br>
 		<br>
+		<a href="#" onClick="javascript:void(0)" class="a-btn lac-outer-space">Export PDF</a>
+		<br>
+		<br>
+		<br>
+		<br>
 		<script src="betika_files/jquery.min.js" type="text/javascript"></script>
 		<!-- <script type="text/javascript" src="betika_files/betslip.min.js"></script> -->
 		<script type="text/javascript">
@@ -47,13 +52,18 @@
 		  }
 		  var mydiv = document.createElement('div');
 		  mydiv.style.position = 'fixed';
-		  mydiv.style.top = '0px';
+		  mydiv.style.bottom = '0px';
 		  mydiv.style.right = '0px';
 		  mydiv.style.border = '1px solid #000';
 		  mydiv.style.backgroundColor = '#fff';
 		  mydiv.style.color = '#000';
 		  mydiv.appendChild(document.createTextNode(document.compatMode))
 		  document.body.appendChild(mydiv);
+		}, false);
+
+		window.opera.addEventListener('BeforeEventListener.onclick', function (e)
+		{
+			e.preventDefault();
 		}, false);
 		</script>
 	</body>
