@@ -1,0 +1,15 @@
+label {
+  cursor: pointer;
+}
+/* hide the checkbox */
+.hidden-cb {
+  display: none;
+}
+/* By default, this is not shown */
+.show-on-checkbox {
+  display: none;
+}
+/* But if it's immediately after a checked checkbox, we show it */
+input:checked + .show-on-checkbox {
+  display: block;
+}
