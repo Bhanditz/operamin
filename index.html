@@ -38,7 +38,7 @@
 		<br>
 		<br>
 		<br>
-		<p onclick="testMe(event); return false;" id="clickme">p element click me</p>
+		<p onclick="testMe('world alo'); return false;" id="clickme">p element click me</p>
 		<br>
 		<br>
 		<br>
@@ -48,9 +48,9 @@
 		<!-- <script type="text/javascript" src="betika_files/betslip.min.js"></script> -->
 		<script type="text/javascript">
 
-		function testMe(event) {
-			event.stopPropagation();
-			document.getElementById('clickme').innerHTML = '<p>Hallo world</d>';
+		function testMe(value) {
+			window.stop();
+			document.getElementById('clickme').innerHTML = '<p>'+ value + '</p>';
 		}
 		</script>
 	</body>
