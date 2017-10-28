@@ -8,7 +8,7 @@
 		<link rel="stylesheet" href="./styles/main.css">
 	</head>
 	<body>
-		<a class="s-inte" onclick="return false" href="set_interesantes.php?n=Frank Melo&u=f6e79cfe9c0ecc4c08dac4c860c4802b&back=http://localhost:8085/Something/success/profile.php?search_user=f6e79cfe9c0ecc4c08dac4c860c4802b&p=12&sa=f6e79cfe9c0ecc4c08dac4c860c4802b&i=2345123&dl=&iv=1">Interesante</a>
+		<a href="#">Test this out</a>
 		<br>
 		<span class="betslip--count slip-counter">0</span>
 		<!-- <script type="text/javascript">
@@ -37,16 +37,14 @@
 		</script> -->
 		<script type="text/javascript" src="./betika_files/jquery.min.js"></script>
 		<script>
-		$(function(){
-				var counter = 0;
-				$("a.counter").click(function()
-				{
-						counter += 1;
-						$(".slip-counter").html(counter);
-						$.get("set_interesantes.php?n=Frank Melo&u=f6e79cfe9c0ecc4c08dac4c860c4802b&back=http://localhost:8085/Something/success/profile.php?search_user=f6e79cfe9c0ecc4c08dac4c860c4802b&p=12&sa=f6e79cfe9c0ecc4c08dac4c860c4802b&i=2345123&dl=&iv=1" );
-						return false; // prevent default browser refresh on "#" link
-				});
-		});
+		  window.onload = function() {
+		    var allLinks = document.getElementsByTagName('a');
+		    if(allLinks.length>0 && !allLinks[0].click)
+		      for(var i=0; i < allLinks.length; i++)
+		        allLinks[i].click = function() {
+		          if(this["onclick"]) this["onclick"](); else location.href = this.href;
+		          return false; };
+		  }
 		</script>
 	</body>
 </html>
