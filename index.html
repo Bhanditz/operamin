@@ -13,7 +13,7 @@
 		<br>
 		<br>
 		<button
-			href="javascript:;"
+			href="javascript:void(0)"
 			hometeam="Gresik United"
 			oddtype="3 Way"
 			bettype="prematch"
@@ -31,7 +31,7 @@
 		<br>
 		<br>
 		<br>
-		<a href="#" onClick="javascript:void(0)" class="a-btn lac-outer-space">Export PDF</a>
+		<a href="javascript:void(0)" onClick="addBet('something')" class="a-btn lac-outer-space">Export PDF</a>
 		<br>
 		<br>
 		<br>
@@ -46,6 +46,7 @@
 		}
 
 		addEventListener('load', function (e) {
+			e.preventDefault();
 		  if (!document.body)
 		  {
 		    return;
@@ -59,11 +60,6 @@
 		  mydiv.style.color = '#000';
 		  mydiv.appendChild(document.createTextNode(document.compatMode))
 		  document.body.appendChild(mydiv);
-		}, false);
-
-		window.opera.addEventListener('BeforeEventListener.onclick', function (e)
-		{
-			e.preventDefault();
 		}, false);
 		</script>
 	</body>
