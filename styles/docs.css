@@ -13,16 +13,6 @@ input[name=amount] {
 .donate-now label {
     padding:5px;
     cursor:pointer;
-    -webkit-appearance: button;
-    /* WebKit */
-    -moz-appearance: button;
-    /* Mozilla */
-    -o-appearance: button;
-    /* Opera */
-    -ms-appearance: button;
-    /* Internet Explorer */
-    appearance: button;
-    /* CSS3 */
 }
 .donate-now label:hover {
     background:#DDD;

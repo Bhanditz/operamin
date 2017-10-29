@@ -48,9 +48,9 @@
 <script>
 
 $(document).ready(function() {
-	$('ul#nav li a').click(function() {
-		var page = $(this).attr('href');
-		return false;
+	$(':radio').on('change', function () {
+		var data = $(this).attr('name');
+	    alert(data);
 	});
 });
 // // Select all links with hashes
