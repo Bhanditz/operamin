@@ -42,9 +42,9 @@
         </div>
         <div class="four-large potatoes">
           <h4>Features</h4>
-          <ul>
+          <ul id="nav">
             <li><a href="#grid">Grid</a></li>
-            <li><a href="#buttons">Buttons</a></li>
+            <li><a href="buttons">Buttons</a></li>
             <li><a href="#typography">Typography</a></li>
             <li><a href="#forms" onclick="tabclick(); return;">Forms</a></li>
             <li><a href="#lists">Lists</a></li>
@@ -550,6 +550,14 @@
 
 
 <script>
+
+$(document).ready(function() {
+	$('ul#nav li a').click(function() {
+		var page = $(this).attr('href');
+
+		return false;
+	});
+});
 // // Select all links with hashes
 // $('a[href*="#"]')
 //   // Remove links that don't actually link to anything
@@ -575,13 +583,13 @@
 //     }
 // });
 
-function tabclick() {
-	alert('hallo world');
-}
-
-$('.btn').on('click', function(e){
-    alert('hallo world');
-});
+// function tabclick() {
+// 	alert('hallo world');
+// }
+//
+// $('.btn').on('click', function(e){
+//     alert('hallo world');
+// });
 </script>
 
 </body>
