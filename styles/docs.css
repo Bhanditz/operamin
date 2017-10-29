@@ -1,4 +1,4 @@
-/*.donate-now {
+.donate-now {
      list-style-type:none;
      margin:25px 0 0 0;
      padding:0;
@@ -7,7 +7,6 @@
 .donate-now li {
     float:left;
     margin:0 5px 0 0;
-    width: 100px;
     text-align: center;
     position: relative;
 }
@@ -20,22 +19,8 @@
       top: 0;
       left: 0;
       width: 100%;
-}*/
-
-
-label {
-    background:#aaa;
-    color:#fff;
-    border-radius:8px;
-    padding:1em;
-    margin:1em;
-    cursor:pointer;
-}
-
-label:hover {
-    background:#ccc;
 }
 
 input {
-    margin-right:1em;
+  margin: 1em;
 }
