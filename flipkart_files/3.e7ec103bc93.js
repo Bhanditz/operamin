@@ -1,1 +1,0 @@
-webpackJsonp([3],{97:function(n,e){"use strict";window.requestIdleCallback=function(){return window.requestIdleCallback||function(n){return window.setTimeout(n,3e3)}}(),window.cancelIdleCallback=function(){return window.cancelIdleCallback||function(n){window.clearTimeout(n)}}()}});
