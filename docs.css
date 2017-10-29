@@ -1,6 +1,6 @@
 html, body {height: 100%;}
 
-.wrap {min-height: 100%;}
+.wrap {height: 100%;}
 
 .nav {
     background: #2874f0;
@@ -16,4 +16,13 @@ html, body {height: 100%;}
     transform: translate3d(0px, 0px, 0px);
     will-change: transform;
     transition: transform .25s ease-out
+}
+.main {
+	width: 100%;
+  pointer-events: none;
+	position: fixed;
+  height: 120%;
+  top: 0;
+  left: 0;
+  z-index: 10;
 }
