@@ -1,6 +1,6 @@
-input[name=amount] {
+/*input[name=amount] {
     display:none
-}
+}*/
 .donate-now {
     list-style-type:none;
     margin:25px 0 0 0;
@@ -12,7 +12,6 @@ input[name=amount] {
 }
 .donate-now label {
     padding:5px;
-    cursor:pointer;
 }
 .donate-now label:hover {
     background:#DDD;
