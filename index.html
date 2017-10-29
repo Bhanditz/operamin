@@ -21,9 +21,9 @@
 <body>
 
 	<ul class="donate-now">
-		<li><input type="radio" id="a1" name="betOne"><label for="a1">Bet 1.1</label></li>
-		<li><input type="radio" id="a2" name="betOne"><label for="a2">Bet 1.2</label></li>
-		<li><input type="radio" id="a3" name="betOne"><label for="a3">Bet 1.3</label></li>
+		<li><label for="a1"><input type="radio" id="a1" name="betOne"> Bet 1.1</label></li>
+		<li><label for="a2"><input type="radio" id="a2" name="betOne"> Bet 1.2</label></li>
+		<li><label for="a3"><input type="radio" id="a3" name="betOne"> Bet 1.3</label></li>
 	</ul>
 	<br>
 	<ul class="donate-now">
@@ -32,45 +32,20 @@
 		<li><input type="radio" id="a6" name="betTwo"><label for="a6">Bet 2.3</label></li>
 	</ul>
 <script>
+	if (window.addEventListener){
+	    window.addEventListener('load', setRadioButtons, false);
+	} else {
+	    window.attachEvent('onload', setRadioButtons);
+	}
 
-// $(document).ready(function() {
-// 	$(':radio').on('change', function () {
-// 		var data = $(this).attr('name');
-// 		return false;
-// 	});
-// });
-// // Select all links with hashes
-// $('a[href*="#"]')
-//   // Remove links that don't actually link to anything
-//   .not('[href="#"]')
-//   .not('[href="#0"]')
-//   .click(function(event) {
-//     // On-page links
-//     if (
-//       location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') &&
-//       location.hostname == this.hostname
-//     ) {
-//       // Figure out element to scroll to
-//       var target = $(this.hash);
-//       target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-//       // Does a scroll target exist?
-//       if (target.length) {
-//         // Only prevent default if animation is actually gonna happen
-//         event.preventDefault();
-//         $('html, body').animate({
-//           scrollTop: target.offset().top
-//         });
-//       }
-//     }
-// });
-
-// function tabclick() {
-// 	alert('hallo world');
-// }
-//
-// $('.btn').on('click', function(e){
-//     alert('hallo world');
-// });
+	function setRadioButtons() {
+	    for (i=0; i<document.getElementsByTagName('input').length; i++) {
+	        if (document.getElementsByTagName('input')[i].type == 'radio' && navigator.userAgent.indexOf("Opera Mini") != -1)
+	            document.getElementsByTagName('input')[i].style.display = "block";
+	        else
+	            document.getElementsByTagName('input')[i].style.display = "none";
+	    }
+	}
 </script>
 
 </body>
