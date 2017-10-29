@@ -43,14 +43,14 @@
         <div class="four-large potatoes">
           <h4>Features</h4>
           <ul>
-            <li><a href="#grid" target="_self">Grid</a></li>
+            <li><a href="#grid">Grid</a></li>
             <li><a href="#buttons">Buttons</a></li>
             <li><a href="#typography">Typography</a></li>
             <li><a href="#forms" onclick="tabclick(); return;">Forms</a></li>
             <li><a href="#lists">Lists</a></li>
             <li><a href="#code">Code</a></li>
             <li><a href="#labels">Labels</a></li>
-            <li><a href="#panels" class="btn">Panels</a></li>
+            <li><a href="#panels" class="btn" target="_parent">Panels</a></li>
           </ul>
         </div>
       </div>
@@ -580,7 +580,7 @@ function tabclick() {
 }
 
 $('.btn').on('click', function(e){
-    e.preventDefault();
+    alert('hallo world');
 });
 </script>
 
