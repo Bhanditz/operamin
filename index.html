@@ -2,36 +2,45 @@
 
 <html lang="en">
 <head>
-    <meta charset="utf-8">
+	<meta charset="utf-8">
 
-    <title>PotatoCSS</title>
+	<title>PotatoCSS</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="./styles/potato.min.css">
-    <link rel="stylesheet" href="./styles/docs.css">
+	<link rel="stylesheet" href="./styles/potato.min.css">
+	<link rel="stylesheet" href="./styles/docs.css">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-    <!--[if lt IE 9]>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
-    <![endif]-->
+	<!--[if lt IE 9]>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+	<![endif]-->
 </head>
 
 <body>
 
-	<ul class="donate-now">
-		<li><label for="a1"><input type="radio" id="a1" name="betOne"> Bet 1.1</label></li>
-		<li><label for="a2"><input type="radio" id="a2" name="betOne"> Bet 1.2</label></li>
-		<li><label for="a3"><input type="radio" id="a3" name="betOne"> Bet 1.3</label></li>
-	</ul>
-	<br>
-	<ul class="donate-now">
-		<li><input type="radio" id="a4" name="betTwo"><label for="a4">Bet 2.1</label></li>
-		<li><input type="radio" id="a5" name="betTwo"><label for="a5">Bet 2.2</label></li>
-		<li><input type="radio" id="a6" name="betTwo"><label for="a6">Bet 2.3</label></li>
-	</ul>
+	<div class="nav">
+		<button type="button" name="button" class="btn-betslip">Betslip <span>0</span></button>
+	</div>
 
+	<div class="content">
+		<ul class="donate-now">
+			<li><label for="a1"><input type="radio" id="a1" name="betOne"> Bet 1.1</label></li>
+			<li><label for="a2"><input type="radio" id="a2" name="betOne"> Bet 1.2</label></li>
+			<li><label for="a3"><input type="radio" id="a3" name="betOne"> Bet 1.3</label></li>
+		</ul>
+		<br>
+		<ul class="donate-now">
+			<li><input type="radio" id="a4" name="betTwo"><label for="a4">Bet 2.1</label></li>
+			<li><input type="radio" id="a5" name="betTwo"><label for="a5">Bet 2.2</label></li>
+			<li><input type="radio" id="a6" name="betTwo"><label for="a6">Bet 2.3</label></li>
+		</ul>
+	</div>
+
+	<div class="footer">
+		<input type="sumbit" id="a1" name="betOne" value="Submit">
+	</div>
 
 </body>
 </html>
