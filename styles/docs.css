@@ -1,1 +1,15 @@
 
+
+.nav {
+
+}
+input[type="radio"] {
+    -ms-transform: scale(3); /* IE 9 */
+    -webkit-transform: scale(3); /* Chrome, Safari, Opera */
+    transform: scale(3);
+    margin: 5px;
+}
+
+li {
+  display: inline-table;
+}

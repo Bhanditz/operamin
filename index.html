@@ -31,22 +31,7 @@
 		<li><input type="radio" id="a5" name="betTwo"><label for="a5">Bet 2.2</label></li>
 		<li><input type="radio" id="a6" name="betTwo"><label for="a6">Bet 2.3</label></li>
 	</ul>
-<script>
-	if (window.addEventListener){
-	    window.addEventListener('load', setRadioButtons, false);
-	} else {
-	    window.attachEvent('onload', setRadioButtons);
-	}
 
-	function setRadioButtons() {
-	    for (i=0; i<document.getElementsByTagName('input').length; i++) {
-	        if (document.getElementsByTagName('input')[i].type == 'radio' && navigator.userAgent.indexOf("Opera Mini") != -1)
-	            document.getElementsByTagName('input')[i].style.display = "block";
-	        else
-	            document.getElementsByTagName('input')[i].style.display = "none";
-	    }
-	}
-</script>
 
 </body>
 </html>
