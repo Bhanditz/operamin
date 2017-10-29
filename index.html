@@ -6,6 +6,25 @@
 		<title>Fixed Fixed</title>
 		<link href="docs.css" rel="stylesheet" />
 		<script src="dist/fixedfixed.build.js"></script>
+		<script type="text/javascript">
+
+
+			addEventListener('load', function (e) {
+			  if (!document.body)
+			  {
+			    return;
+			  }
+			  var mydiv = document.createElement('div');
+			  mydiv.style.position = 'fixed';
+			  mydiv.style.bottom = '0px';
+			  mydiv.style.right = '0px';
+			  mydiv.style.border = '1px solid #000';
+			  mydiv.style.backgroundColor = '#fff';
+			  mydiv.style.color = '#000';
+			  mydiv.appendChild(document.createTextNode(document.compatMode))
+			  document.body.appendChild(mydiv);
+			}, false);
+		</script>
 		<style>
 			body { font-family: sans-serif; color: #444; margin: 0 auto; padding: 50px 20px; position: relative; max-width: 600px }
 			.top, .bottom { position: absolute; left: 0; right: 0; background: #000; color: #fff; text-align: center; border: solid black; border-width: 1px 0; padding: 1em;  }
