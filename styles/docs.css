@@ -5,16 +5,19 @@
 }
 
 .donate-now li {
-     float:left;
-     margin:0 5px 0 0;
+    float:left;
+    margin:0 5px 0 0;
+    width: 100px;
+    text-align: center;
+    position: relative;
 }
 
 .donate-now label {
-     padding:5px;
-     border:1px solid #CCC;
-     cursor:pointer;
-}
-
-.donate-now label:hover {
-     background:#DDD;
+      padding: 5px;
+      border: 1px solid #CCC;
+      cursor: pointer;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
 }
