@@ -1,35 +1,78 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset=utf-8 />
-		<meta name="viewport" content="width=device-width,initial-scale=1, user-scalable=no">
-		<title>Fixed Fixed</title>
-		<link href="docs.css" rel="stylesheet" />
-		<script type="text/javascript" src="//code.jquery.com/jquery-1.6.js"></script>
-		<script type="text/javascript">
+    <head>
+        <link href="https://cdn.mdn.mozilla.net/static/build/styles/samples.37902ba3b7fe.css" rel="stylesheet" type="text/css" />
 
-			//
-			// addEventListener('load', function (e) {
-			//   if (!document.body)
-			//   {
-			//     return;
-			//   }
-			//   var mydiv = document.createElement('div');
-			//   mydiv.style.position = 'fixed';
-			//   mydiv.style.bottom = '0px';
-			//   mydiv.style.right = '0px';
-			//   mydiv.style.border = '1px solid #000';
-			//   mydiv.style.backgroundColor = '#fff';
-			//   mydiv.style.color = '#000';
-			//   mydiv.appendChild(document.createTextNode(document.compatMode))
-			//   document.body.appendChild(mydiv);
-			// }, false);
-		</script>
-	</head>
-	<body class="docs">
-		<div class="parent">
-			Parent element
-			<div class="element">Child element</div>
-		</div>
-	</body>
+        <style type="text/css">
+            #container {
+  border: 5px solid #F4F7F8;
+  width: 100%;
+  height: 300px;
+  display: flex;
+  overflow: scroll;
+  box-sizing: border-box;
+}
+
+.box {
+  height: 80px;
+  margin: 5px;
+  padding: 5px;
+  margin-top: 100px;
+  background-color: yellow;
+  border: 2px solid red;
+  color: red;
+  font-family: monospace;
+}
+
+.text {
+  max-width: 120px;
+  padding: 0 0.5em 0 120px;
+  font-family: sans-serif;
+}
+
+
+.relative {
+  position: relative;
+  top: 30px;
+  right: 20px;
+}
+
+.sticky {
+  position: -webkit-sticky; /* to make the example work in Safari */
+  position: sticky;
+  top: 20px;
+}
+
+.fixed {
+  position: fixed;
+  left: 280px;
+}
+        </style>
+
+    </head>
+    <body>
+
+            <div id="container">
+  <div class="box"><strong>static</strong></div>
+  <div class="box relative"><strong>relative</strong><br/><br/>top: 30px;<br/>right: 20px;</div>
+  <div class="box sticky"><strong>sticky</strong><br/><br/>top: 20px;</div>
+  <div class="box fixed"><strong>fixed</strong><br/><br/>left: 280px;</div>
+
+  <div class="text">
+    <p>Try scrolling this example to see the effect of
+        <strong><code>fixed</code></strong> or
+        <strong><code>sticky</code></strong> positioning.</p>
+    <p>With <strong><code>fixed</code></strong> positioning, the
+        element does not move as the viewport scrolls.</p>
+    <p>With <strong><code>sticky</code></strong> positioning, the
+        element moves until it reaches a threshold:
+        in this case 20 pixels from the top of the container.</p>
+    <p>The other two boxes show the effect of
+        <strong><code>static</code></strong> and
+        <strong><code>relative</code></strong> positioning.</p>
+  </div>
+</div>
+
+
+    </body>
 </html>
