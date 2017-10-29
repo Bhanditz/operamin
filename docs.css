@@ -1,28 +1,21 @@
-html, body {height: 100%;}
-
-.wrap {height: 100%;}
-
-.nav {
-    background: #2874f0;
-    background: linear-gradient(30deg,#2874f0,#0065c5);
-    width: 100%;
-    height: 55px;
-    display: table;
-    table-layout: fixed;
-    z-index: 2;
-    position: fixed;
-    top: 0;
-    padding: 10px 0;
-    transform: translate3d(0px, 0px, 0px);
-    will-change: transform;
-    transition: transform .25s ease-out
+#wrapper{
+    position:fixed;
+    z-index:10000;
+    height: auto;
+    background-color: transparent;
+    margin: 0;
+    bottom:0;
+    left:0;
+    right:0;
 }
-.main {
-	width: 100%;
-  pointer-events: none;
-	position: fixed;
-  height: 120%;
-  top: 0;
-  left: 0;
-  z-index: 10;
+
+#label {
+    position: relative;
+    bottom:0px;
+    left: 50%;
+    background-color: transparent;
+    height: 40px;
+    width: 200px;
+    border: 1px solid red;
+    margin-left:-100px;
 }
