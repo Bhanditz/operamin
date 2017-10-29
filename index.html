@@ -26,36 +26,35 @@
 			//   document.body.appendChild(mydiv);
 			// }, false);
 
-			$(function(){
-			    scrollTo(0, 100);
-			    $('#btn').each(function(){
-			        var showMsg = function(msg) {
-			            $('#container').append($('<p></p>').text(msg))
-			        }
-
-			        showMsg('Button Offset: '+this.offsetTop);
-
-			        showMsg('Container offset: '+$('#container').get(0).offsetTop);
-
-			        // Make container explicitly relative
-			        $('#container').css('position', 'relative');
-
-			        showMsg('Container now has explicit relative position');
-
-			        showMsg('Button Offset: '+this.offsetTop);
-
-			        showMsg('Container offset: '+$('#container').get(0).offsetTop);
-
-			        // Make container display: inline-block
-			        $('#container').css('display', 'inline-block');
-
-			        showMsg('Container now has inline-block display');
-
-			        showMsg('Button Offset: '+this.offsetTop);
-
-			        showMsg('Container offset: '+$('#container').get(0).offsetTop);
-			    });
-			});
+			(function(_global, _doc){
+		    var _supports = false;
+		    var _html = _doc.documentElement;
+		    if(!(_global.operamini && ({}).toString.call(_global.operamini) === '[object OperaMini]')){
+		        var _el1 = _doc.createElement('div');
+		        _el1.style.cssText = 'top:0;height:10px;position:fixed;width:100%;';
+		        if(_el1.style.position === 'fixed' && _el1.getBoundingClientRect){
+		            var _body = _doc.body;
+		            var _hasBody = !!_body;
+		            if(!_hasBody){
+		                _body = _doc.createElement('body');
+		                _body.style.cssText = 'height:100%;width:100%;position:absolute;'
+		                _html.appendChild(_body);
+		            }
+		                        var _el2 = _el1.cloneNode();
+		            _el2.style.top = '100%';
+		            _el2.style.position = 'absolute';
+		            _el2.appendChild(_el1);
+		            _body.appendChild(_el2);            var _container = (++_body.scrollTop === _body.scrollTop && _body) || (++_html.scrollTop === _html.scrollTop && _html);
+		            _supports = (_container.scrollTop > 0 && _el1.getBoundingClientRect().top === 0)
+		            _body.removeChild(_el2);
+		            _container.scrollTop -= _container.scrollTop;
+		            if(!_hasBody){
+		                _html.removeChild(_body);
+		            }
+		        }
+		    }
+		    _html.className += ' ua-' + (_supports ? '' : 'no-') + 'fixed';
+		})(window, document);
 		</script>
 	</head>
 	<body class="docs">
