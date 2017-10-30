@@ -1,39 +1,35 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset=utf-8 />
-		<meta name="viewport" content="width=device-width,initial-scale=1, user-scalable=no">
-		<title>Fixed Fixed</title>
-		<link href="docs.css" rel="stylesheet" />
-		<script type="text/javascript" src="//code.jquery.com/jquery-1.6.js"></script>
-	</head>
-	<body class="docs">
-		<div href="javascript:;" onclick="somefunction();">Do Something</div>
-		<br>
-		<br>
-		<br>
-		<br>
-		<a href="JavaScript:void(0);" onclick="alert('Well done!')">Double Click Me!</a>
-		<script type="text/javascript">
-			function somefunction() {
-				console.log('hallo world');
-			}
-			//
-			// addEventListener('load', function (e) {
-			//   if (!document.body)
-			//   {
-			//     return;
-			//   }
-			//   var mydiv = document.createElement('div');
-			//   mydiv.style.position = 'fixed';
-			//   mydiv.style.bottom = '0px';
-			//   mydiv.style.right = '0px';
-			//   mydiv.style.border = '1px solid #000';
-			//   mydiv.style.backgroundColor = '#fff';
-			//   mydiv.style.color = '#000';
-			//   mydiv.appendChild(document.createTextNode(document.compatMode))
-			//   document.body.appendChild(mydiv);
-			// }, false);
-		</script>
-	</body>
+<head>
+    <meta charset="utf-8" />
+    <title>Test Opera Click</title>
+    <script  type="text/javascript" src="//code.jquery.com/jquery-latest.min.js" ></script>
+    <script type="text/javascript">
+        function sendAjax() {
+            var testData = {
+                "AccountId": "D9D1102E-0133-4720-B158-B19947BF2AC9",
+                "PromotionGuid": "B15CAAE4-E8D7-4731-9792-D9DEB0411F80",
+                "BrandCode": "RV"
+            };
+
+            $.ajax({
+                type: "POST",
+                url: "http://api.promotions.com.dev.labenv/api/Promotion/GetAvailablePromotionIteration?brandcode=RV&culturecode=en-us",
+                data: testData,
+                dataType: "json",
+                success: function(data){
+                console.log(data);
+                },
+                error: function (data) {
+                    console.log(data);
+                },
+                cache: false,
+                async: true
+            });
+        }
+   </script>
+</head>
+<body>
+    <button type="button" onclick="sendAjax()">Click Me</button>
+</body>
 </html>
