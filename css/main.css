@@ -9,3 +9,7 @@ button {
 .panel-default {
   border-radius: 0px !important;
 }
+
+.panel {
+  margin-bottom: 1px !important;
+}
