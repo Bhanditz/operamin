@@ -1,0 +1,11 @@
+.td-no-pading {
+  padding: 0px !important;
+}
+
+button {
+  border-radius: 0px !important;
+}
+
+.panel-default {
+  border-radius: 0px !important;
+}
