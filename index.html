@@ -6,8 +6,14 @@
 		<title>Fixed Fixed</title>
 		<link href="docs.css" rel="stylesheet" />
 		<script type="text/javascript" src="//code.jquery.com/jquery-1.6.js"></script>
-		<script type="text/javascript">
+	</head>
+	<body class="docs">
+		<a href="javascript:;" onclick="somefunction();">Do Something</a>
 
+		<script type="text/javascript">
+			function somefunction() {
+				console.log('hallo world');
+			}
 			//
 			// addEventListener('load', function (e) {
 			//   if (!document.body)
@@ -25,11 +31,5 @@
 			//   document.body.appendChild(mydiv);
 			// }, false);
 		</script>
-	</head>
-	<body class="docs">
-		<label>
-		   <input type="radio" name="h" value="1">
-		   <div></div>
-		</label>
 	</body>
 </html>
