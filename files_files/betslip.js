@@ -73,7 +73,7 @@ function addBet(t, e, i, c, n, o, a, r, s, p, l, d) {
     var i = t;
     count += 1;
     $("." + i).removeClass("picked"),
-     $("." + c).addClass("picked"),
+    $("." + c).addClass("picked"),
     $(".slip-counter").html(count);
     // $.post(u, {
     //     match_id: t,
