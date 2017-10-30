@@ -18,18 +18,20 @@
                 data: testData,
                 dataType: "json",
                 success: function(data){
-                console.log(data);
+	                alert('success');
                 },
                 error: function (data) {
-                    console.log(data);
+                    alert('error');
                 },
                 cache: false,
                 async: true
             });
+
+						return false;
         }
    </script>
 </head>
 <body>
-    <button type="button" onclick="sendAjax()">Click Me</button>
+    <button type="button" onclick="sendAjax()">Click</button>
 </body>
 </html>
