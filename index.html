@@ -21,22 +21,22 @@
 
     <section>
       <ul class="list">
-        <li class="list-inline ellips">soccer</li>
-        <li class="list-inline ellips">rugby</li>
-        <li class="list-inline ellips">tennis</li>
-        <li class="list-inline ellips">basketball</li>
-        <li class="list-inline ellips">cricket</li>
-        <li class="list-inline ellips">baseball</li>
-        <li class="list-inline ellips">motorsport</li>
-        <li class="list-inline ellips">golf</li>
-        <li class="list-inline ellips">ice hockey</li>
-        <li class="list-inline ellips">boxing</li>
-        <li class="list-inline ellips">snooker</li>
-        <li class="list-inline ellips">cycling</li>
-        <li class="list-inline ellips">dart</li>
-        <li class="list-inline ellips">volleyball</li>
-        <li class="list-inline ellips">handball</li>
-        <li class="list-inline ellips">football</li>
+        <li class="list-inline ellips"><a href="#">soccer</a></li>
+        <li class="list-inline ellips"><a href="#">rugby</a></li>
+        <li class="list-inline ellips"><a href="#">tennis</a></li>
+        <li class="list-inline ellips"><a href="#">basketball</a></li>
+        <li class="list-inline ellips"><a href="#">cricket</a></li>
+        <li class="list-inline ellips"><a href="#">baseball</a></li>
+        <li class="list-inline ellips"><a href="#">motorsport</a></li>
+        <li class="list-inline ellips"><a href="#">golf</a></li>
+        <li class="list-inline ellips"><a href="#">ice hockey</a></li>
+        <li class="list-inline ellips"><a href="#">boxing</a></li>
+        <li class="list-inline ellips"><a href="#">snooker</a></li>
+        <li class="list-inline ellips"><a href="#">cycling</a></li>
+        <li class="list-inline ellips"><a href="#">dart</a></li>
+        <li class="list-inline ellips"><a href="#">volleyball</a></li>
+        <li class="list-inline ellips"><a href="#">handball</a></li>
+        <li class="list-inline ellips"><a href="#">football</a></li>
       </ul>
     </section>
 
@@ -51,7 +51,7 @@
         <tbody>
           <tr>
             <td>
-              <select class="select">
+              <select class="select" onchange="toggle()">
                 <option value="1">England</option>
                 <option value="2">Spain</option>
                 <option value="3">Italy</option>
@@ -83,6 +83,24 @@
           </tr>
         </tbody>
       </table>
+
+      <form  id="form" class="hidden">
+        <ul class="list">
+          <li class="list-inline-checkbox"><input type="checkbox" name="vehicle1" value="Bike"> La Liga 1</li>
+          <li class="list-inline-checkbox"><input type="checkbox" name="vehicle2" value="Car"> La Liga 2</li>
+          <li class="list-inline-checkbox"><input type="checkbox" name="vehicle3" value="Boat1"> La Liga 3</li>
+          <li class="list-inline-checkbox"><input type="checkbox" name="vehicle3" value="Boat2"> La Liga 4</li>
+          <li class="list-inline-checkbox"><input type="checkbox" name="vehicle3" value="Boat3"> La Liga 5</li>
+          <li class="list-inline-checkbox"><input type="checkbox" name="vehicle3" value="Boat4"> La Liga 6</li>
+          <li class="list-inline-checkbox"><input type="checkbox" name="vehicle3" value="Boa5"> La Liga 7</li>
+          <li class="list-inline-checkbox"><input type="checkbox" name="vehicle3" value="Boa6"> La Liga 8</li>
+          <li class="list-inline-checkbox"><input type="checkbox" name="vehicle3" value="Boat7"> La Liga 9</li>
+        </ul>
+        <div class="clearfix">
+          <input type="button" onclick="toggle()" value="Update">
+          <input type="button" onclick="toggle()" value="Close">
+        </div>
+      </form>
     </section>
 
     <!-- <script async type="text/javascript" src="./assets/js/general.js"></script> -->
@@ -93,5 +111,13 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <script type="text/javascript">
+
+      function toggle() {
+
+        document.getElementById('form').classList.toggle('hidden');
+      }
+    </script>
   </body>
 </html>
