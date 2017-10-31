@@ -1,15 +1,6 @@
-.td-no-pading {
-  padding: 0px !important;
-}
-
-button {
-  border-radius: 0px !important;
-}
-
-.panel-default {
-  border-radius: 0px !important;
-}
-
-.panel {
-  margin-bottom: 1px !important;
+html, body {
+  display: block;
+  height: 1000px;
+  width: 100%;
+  background-color: #333;
 }
