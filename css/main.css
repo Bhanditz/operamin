@@ -88,3 +88,7 @@ textarea {
   font-size: 0.8em;
   width: 50%;
 }
+
+.btn-half {
+  width: 49%;
+}
