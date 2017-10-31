@@ -28,6 +28,10 @@ textarea {
   display: none !important;
 }
 
+.margin-bottom {
+  margin-bottom: 1em;
+}
+
 .list {
   margin: 0px;
   padding: 0px;
@@ -79,9 +83,14 @@ textarea {
   appearance:         none;
 }
 
-.table {
+.table, .league {
   width: 100%;
   text-align: left;
+}
+
+table,td {
+    padding: 0;
+    margin: 0
 }
 
 .th-select {
@@ -91,4 +100,77 @@ textarea {
 
 .btn-half {
   width: 49%;
+}
+
+.pull-left {
+  float: left;
+}
+.pull-right {
+  float: right;
+}
+
+.clubs {
+    text-align: left;
+    padding-left: 5px;
+}
+.sidebet {
+    text-align: center;
+    border: 1px solid #DEDFE4;
+    background-color: #f2f2f4;
+    max-width: 35px;
+    display: block;
+    float: right;
+}
+.sidebet a {
+    color: #333;
+    text-decoration: none;
+    display: block;
+    padding: 5px 8px;
+}
+
+.clubone {
+    padding: 0 5px;
+    text-align: left;
+}
+.odds {
+    background-color: #fbfbfb;
+    color: #24367E;
+    font-size: 12px;
+    border-top: 1px solid #b5b5b5;
+}
+button {
+    text-decoration: none;
+    text-align: right;
+    padding: 4px 0;
+    border: none;
+    outline: 0;
+    background: 0 0;
+}
+
+.highlights--item {
+    background-color: #fff;
+    border-collapse: collapse;
+    width: 98.5%;
+    margin: 5px .75%;
+}
+
+.highlights {
+  background-color: #d4d4d4;
+}
+
+.border-td {
+    height: 100%;
+    width: 1px;
+    background-color: #b5b5b5;
+}
+
+.picked {
+    background: #f8e892!important;
+    color: #333!important;
+}
+
+.odds td button, .sidebet-card {
+    width: 100%;
+    color: #333;
+    display: block;
 }
