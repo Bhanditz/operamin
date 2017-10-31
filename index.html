@@ -21,15 +21,18 @@
     </section>
 
     <section class="main-header">
-      <form novalidate>
+      <!-- Learn about this code on MDN: https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Form_validation -->
+      <form>
         <p>
           <label for="mail">
-            <span>Please enter an email address:</span>
-            <input type="email" id="mail" name="mail">
-            <span class="error" aria-live="polite"></span>
+              <span>Please enter an email address:</span>
+              <input type="text" class="mail" id="mail" name="mail">
+              <span class="error" aria-live="polite"></span>
           </label>
-        </p>
-        <button>Submit</button>
+        <p>
+        <!-- Some legacy browsers need to have the `type` attribute
+             explicitly set to `submit` on the `button`element -->
+        <button type="submit">Submit</button>
       </form>
     </section>
 
@@ -2679,36 +2682,77 @@
         // })
       }
 
-      // There are many ways to pick a DOM node; here we get the form itself and the email
-      // input box, as well as the span element into which we will place the error message.
-
+      // There are fewer ways to pick a DOM node with legacy browsers
       var form  = document.getElementsByTagName('form')[0];
       var email = document.getElementById('mail');
-      var error = document.querySelector('.error');
 
-      email.addEventListener("input", function (event) {
-        // Each time the user types something, we check if the
-        // email field is valid.
-        if (email.validity.valid) {
-          // In case there is an error message visible, if the field
-          // is valid, we remove the error message.
-          error.innerHTML = ""; // Reset the content of the message
-          error.className = "error"; // Reset the visual state of the message
+      // The following is a trick to reach the next sibling Element node in the DOM
+      // This is dangerous because you can easily build an infinite loop.
+      // In modern browsers, you should prefer using element.nextElementSibling
+      var error = email;
+      while ((error = error.nextSibling).nodeType != 1);
+
+      // As per the HTML5 Specification
+      var emailRegExp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+      // Many legacy browsers do not support the addEventListener method.
+      // Here is a simple way to handle this; it's far from the only one.
+      function addEvent(element, event, callback) {
+        var previousEventCallBack = element["on"+event];
+        element["on"+event] = function (e) {
+          var output = callback(e);
+
+          // A callback that returns `false` stops the callback chain
+          // and interrupts the execution of the event callback.
+          if (output === false) return false;
+
+          if (typeof previousEventCallBack === 'function') {
+            output = previousEventCallBack(e);
+            if(output === false) return false;
+          }
         }
-      }, false);
-      form.addEventListener("submit", function (event) {
-        // Each time the user tries to send the data, we check
-        // if the email field is valid.
-        if (!email.validity.valid) {
+      };
 
-          // If the field is not valid, we display a custom
-          // error message.
+      // Now we can rebuild our validation constraint
+      // Because we do not rely on CSS pseudo-class, we have to
+      // explicitly set the valid/invalid class on our email field
+      addEvent(window, "load", function () {
+        // Here, we test if the field is empty (remember, the field is not required)
+        // If it is not, we check if its content is a well-formed e-mail address.
+        var test = email.value.length === 0 || emailRegExp.test(email.value);
+
+        email.className = test ? "valid" : "invalid";
+      });
+
+      // This defines what happens when the user types in the field
+      addEvent(email, "input", function () {
+        var test = email.value.length === 0 || emailRegExp.test(email.value);
+        if (test) {
+          email.className = "valid";
+          error.innerHTML = "";
+          error.className = "error";
+        } else {
+          email.className = "invalid";
+        }
+      });
+
+      // This defines what happens when the user tries to submit the data
+      addEvent(form, "submit", function () {
+        var test = email.value.length === 0 || emailRegExp.test(email.value);
+
+        if (!test) {
+          email.className = "invalid";
           error.innerHTML = "I expect an e-mail, darling!";
           error.className = "error active";
-          // And we prevent the form from being sent by canceling the event
-          event.preventDefault();
+
+          // Some legacy browsers do not support the event.preventDefault() method
+          return false;
+        } else {
+          email.className = "valid";
+          error.innerHTML = "";
+          error.className = "error";
         }
-      }, false);
+      });
     </script>
   </body>
 </html>
