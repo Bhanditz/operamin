@@ -32,3 +32,16 @@ h1 {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+.select {
+  background-color: #fff;
+  border: 1px solid #333;
+  color: #333;
+  display: block;
+  font-size: 16px;
+  line-height: 1;
+  height: 46px;
+  margin: 0 0 20px;
+  padding: 0 10px;
+  width: 100%;
+}
