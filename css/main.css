@@ -19,7 +19,7 @@ h1 {
 }
 
 .list-inline {
-  display: inline-block;
+  float: left;
   border-left: 1px solid #ccc;
   width: 20%;
   margin: 0;
@@ -46,4 +46,14 @@ h1 {
   -webkit-appearance: none;
   -moz-appearance:    none;
   appearance:         none;
+}
+
+.table {
+  width: 100%;
+  text-align: left;
+}
+
+.th-select {
+  font-size: 0.8em;
+  width: 50%;
 }
