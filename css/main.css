@@ -11,6 +11,22 @@ body {
   margin: auto;
 }
 
+.bg-primary {
+  background-color: #333;
+}
+
+.nav-top {
+  background-color: #000;
+  border-radius: 0;
+  height: 61px;
+  color: #fff;
+  padding: 1px 1em;
+}
+
+.anch-tag {
+  float: right;
+}
+
 h1 {
   text-transform: uppercase;
 }
@@ -32,6 +48,9 @@ textarea {
   margin-bottom: 1em;
 }
 
+.bg-lightgray {
+  background-color: #efefef;
+}
 .list {
   margin: 0px;
   padding: 0px;
@@ -41,11 +60,12 @@ textarea {
 
 .list-inline {
   float: left;
-  border-left: 1px solid #ccc;
   width: 20%;
   margin: 0;
-  padding: 0 5px;
+  padding: 5px;
   list-style: none;
+  text-align: center;
+  border-left: 5px solid #fff;
 }
 
 .list-inline-checkbox {
@@ -175,59 +195,33 @@ button {
     display: block;
 }
 
-/* This is just to make the example nicer */
-body {
-  font: 1em sans-serif;
-  padding: 0;
-  margin : 0;
-}
 
-form {
-  max-width: 200px;
-}
-
-p * {
+/* Icons */
+.icon-wrapper {
+  width: 1em;
+  height: 1em;
   display: block;
+  margin: 0 auto;
 }
-
-input.mail {
-  -webkit-appearance: none;
-
+.icons {
+  height: 100%;
   width: 100%;
-  border: 1px solid #333;
-  margin: 0;
-
-  font-family: inherit;
-  font-size: 90%;
-
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+  display: block;
+  background-repeat: no-repeat;
 }
 
-/* This is our style for the invalid fields */
-input.invalid{
-  border-color: #900;
-  background-color: #FDD;
+.img-football {
+    background-image: url(https://cdn.betway.co.za/images/Shared/sports/soccer.svg);
 }
 
-input:focus.invalid {
-  outline: none;
+.img-rugby {
+    background-image: url(https://cdn.betway.co.za/images/Shared/sports/rugby.svg);
 }
 
-/* This is the style of our error messages */
-.error {
-  width  : 100%;
-  padding: 0;
-
-  font-size: 80%;
-  color: white;
-  background-color: #900;
-  border-radius: 0 0 5px 5px;
-
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+.img-tennis {
+    background-image: url(https://cdn.betway.co.za/images/Shared/sports/tennis.svg);
 }
 
-.error.active {
-  padding: 0.3em;
+.img-basketball {
+    background-image: url(https://cdn.betway.co.za/images/Shared/sports/basketball.svg);
 }
