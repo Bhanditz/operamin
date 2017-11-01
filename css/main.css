@@ -219,7 +219,7 @@ table,td {
     text-align: left;
 }
 .odds {
-    background-color: #fbfbfb;
+    background-color: rgba(67, 149, 57, 0.4);
     color: #24367E;
     font-size: 12px;
     border-top: 1px solid #b5b5b5;
@@ -241,7 +241,7 @@ button {
 }
 
 .highlights {
-  background-color: #d4d4d4;
+  background-color: #efefef;
 }
 
 .border-td {
@@ -251,8 +251,8 @@ button {
 }
 
 .picked {
-    background: #f8e892!important;
-    color: #333!important;
+    background: #439539!important;
+    color: #fff!important;
 }
 
 .odds td button, .sidebet-card {
