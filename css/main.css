@@ -118,7 +118,7 @@ textarea {
 
 .ul-list {
   margin: 0px;
-  padding: 0px 1em;
+  padding: 0px .5em;
   overflow: hidden;
 }
 
