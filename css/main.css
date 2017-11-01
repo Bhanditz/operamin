@@ -1,6 +1,8 @@
 body {
   font-family: 'Open Sans', sans-serif;
-  line-height:1.5em;
+  line-height: 1em;
+  line-height: 1.5;
+  font-weight: lighter;
   -webkit-text-size-adjust: 100%; /* 2 */
   -ms-text-size-adjust: 100%; /* 2 */
   margin:0;
@@ -84,10 +86,36 @@ textarea {
   border: 1px solid transparent;
 }
 
+.btn-sm {
+  display: inline-block;
+  margin-bottom: 0;
+  padding: 10px 16px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+}
+
 .btn-primary {
   color: rgb(255, 255, 255);
   background-color: rgb(67, 149, 57);
   border-bottom-color: rgb(67, 149, 57);
+}
+
+.btn-block {
+    width: 100%;
+    display: block;
 }
 
 .list {
@@ -173,6 +201,7 @@ textarea {
   width: 100%;
   text-align: left;
 }
+
 .league {
   font-size: 10px;
 }
@@ -228,14 +257,6 @@ table,td {
     font-size: 12px;
     border-top: 1px solid #b5b5b5;
 }
-button {
-    text-decoration: none;
-    text-align: right;
-    padding: 4px 0;
-    border: none;
-    outline: 0;
-    background: 0 0;
-}
 
 .highlights--item {
     background-color: #fff;
@@ -287,11 +308,47 @@ button {
 .img-rugby {
     background-image: url(https://cdn.betway.co.za/images/Shared/sports/rugby.svg);
 }
-
 .img-tennis {
     background-image: url(https://cdn.betway.co.za/images/Shared/sports/tennis.svg);
 }
 
 .img-basketball {
     background-image: url(https://cdn.betway.co.za/images/Shared/sports/basketball.svg);
+}
+
+/* Panel styling */
+.panel {
+    padding: 0px 1em;
+    border: 1px solid #333;
+}
+.outcome p {
+  margin: 5px 0;
+  font-size: 85%;
+}
+
+.eventDate {
+    color: #8a8a8a;
+}
+
+.inline-potato,.inline-potato li {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+
+.label {
+    display: inline;
+    line-height: 1;
+    font-size: 80%;
+    color: #333;
+    border: 1px solid #333;
+    text-align: center;
+    white-space: nowrap;
+    padding: 3px 4px;
+    border-radius: 4px;
+}
+
+.label.primary {
+    color: #333;
+    border: 1px solid #439539;
 }
