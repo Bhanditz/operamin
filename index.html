@@ -36,20 +36,23 @@
         <li class="list-inline ellips">
           <a href="#"><span class="icon-wrapper"><i class="icons img-basketball"></i></span>basketball</a>
         </li>
-        <li class="list-inline ellips hidden"><a href="#">cricket</a></li>
-        <li class="list-inline ellips hidden"><a href="#">baseball</a></li>
-        <li class="list-inline ellips hidden"><a href="#">motorsport</a></li>
-        <li class="list-inline ellips hidden"><a href="#">golf</a></li>
-        <li class="list-inline ellips hidden"><a href="#">ice hockey</a></li>
-        <li class="list-inline ellips hidden"><a href="#">boxing</a></li>
-        <li class="list-inline ellips hidden"><a href="#">snooker</a></li>
-        <li class="list-inline ellips hidden"><a href="#">cycling</a></li>
-        <li class="list-inline ellips hidden"><a href="#">dart</a></li>
-        <li class="list-inline ellips hidden"><a href="#">volleyball</a></li>
-        <li class="list-inline ellips hidden"><a href="#">handball</a></li>
-        <li class="list-inline ellips hidden"><a href="#">football</a></li>
+
+        <span id="hidden-sport" class="hidden">
+          <li class="list-inline ellips"><a href="#"><span class="icon-wrapper"><i class="icons img-football"></i></span>cricket</a></li>
+          <li class="list-inline ellips"><a href="#"><span class="icon-wrapper"><i class="icons img-football"></i></span>baseball</a></li>
+          <li class="list-inline ellips"><a href="#"><span class="icon-wrapper"><i class="icons img-football"></i></span>motorsport</a></li>
+          <li class="list-inline ellips"><a href="#"><span class="icon-wrapper"><i class="icons img-football"></i></span>golf</a></li>
+          <li class="list-inline ellips"><a href="#"><span class="icon-wrapper"><i class="icons img-football"></i></span>ice hockey</a></li>
+          <li class="list-inline ellips"><a href="#"><span class="icon-wrapper"><i class="icons img-football"></i></span>boxing</a></li>
+          <li class="list-inline ellips"><a href="#"><span class="icon-wrapper"><i class="icons img-football"></i></span>snooker</a></li>
+          <li class="list-inline ellips"><a href="#"><span class="icon-wrapper"><i class="icons img-football"></i></span>cycling</a></li>
+          <li class="list-inline ellips"><a href="#"><span class="icon-wrapper"><i class="icons img-football"></i></span>dart</a></li>
+          <li class="list-inline ellips"><a href="#"><span class="icon-wrapper"><i class="icons img-football"></i></span>volleyball</a></li>
+          <li class="list-inline ellips"><a href="#"><span class="icon-wrapper"><i class="icons img-football"></i></span>handball</a></li>
+          <li class="list-inline ellips"><a href="#"><span class="icon-wrapper"><i class="icons img-football"></i></span>football</a></li>
+        </span>
       </ul>
-      <a href="#more" class="pull-right">more</a>
+      <a href="#more" id="sports-toggle" class="pull-right link-more" onclick="toggleSport()">more</a>
     </section>
 
     <section>
@@ -2633,15 +2636,18 @@
     <![endif]-->
     <script type="text/javascript" src="./js/jquery.min.js"></script>
     <script type="text/javascript">
-      var count = 0;
+      var toggleMore = false;
       function toggle() {
 
         document.getElementById('form').classList.toggle('hidden');
       }
 
       function toggleSport() {
+        toggleMore = !toggleMore;
+        document.getElementById('hidden-sport').classList.toggle('hidden');
 
-        document.getElementById('sports').classList.toggle('hidden');
+        var obj = document.getElementById('sports-toggle');
+        obj.innerText = !toggleMore ? 'more' : 'less';
       }
 
       function addBet(t, e, i, c, n, o, a, r, s, p, l, d) {
