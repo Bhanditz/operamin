@@ -1,0 +1,16 @@
+.segmented {
+  padding: 12px;
+}
+
+.segmented label {
+  border: outset 1px silver;
+  padding: 2px 16px;
+  margin-right: -5px;
+  background: #ddd;
+  pointer: click;
+}
+
+.segmented input:checked + label {
+  border: inset 1px silver;
+  background: #aaa;
+}
