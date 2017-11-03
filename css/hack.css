@@ -1,6 +1,8 @@
-http, body {
-  font-family: Helvetica,Arial,sans-serif;
-  font-size: 12px;
-  height: 100%;
-  -webkit-overflow-scrolling: touch;
+body
+{
+    margin: 0px 0px 0px 0px;
+}
+html, body
+{
+    overflow: hidden;
 }
