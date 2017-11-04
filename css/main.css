@@ -368,24 +368,9 @@ table,td {
   width: 40px;
 }
 
-input[type="checkbox"]{
-cursor: pointer;
--webkit-appearance: none;
-appearance: none;
-background: #34495E;
-border-radius: 1px;
-box-sizing: border-box;
-position: relative;
-box-sizing: content-box ;
-width: 30px;
-height: 30px;
-border-width: 0;
-transition: all .3s linear;
-}
-input[type="checkbox"]:checked{
-  background-color: #2ECC71;
-}
-input[type="checkbox"]:focus{
-  outline: 0 none;
-  box-shadow: none;
+input[type=checkbox] {
+    transform: scale(2);
+    -ms-transform: scale(2);
+    -webkit-transform: scale(2);
+    padding: 10px;
 }
