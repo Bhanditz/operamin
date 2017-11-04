@@ -369,7 +369,7 @@ table,td {
 }
 
 .checkbox {
-    transform: scale(2.5);
-    -ms-transform: scale(2.5);
-    -webkit-transform: scale(2.5);
+    transform: scale(2.3);
+    -ms-transform: scale(2.3);
+    -webkit-transform: scale(2.3);
 }
