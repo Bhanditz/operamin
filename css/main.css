@@ -140,7 +140,7 @@ textarea {
   border-left: 1px solid #ccc;
   width: 45%;
   margin: 0;
-  padding: 0 5px;
+  padding: 0px 0px 5px 5px;
   list-style: none;
 }
 
@@ -369,8 +369,7 @@ table,td {
 }
 
 .checkbox {
-    transform: scale(2);
-    -ms-transform: scale(2);
-    -webkit-transform: scale(2);
-    padding: 10px;
+    transform: scale(1);
+    -ms-transform: scale(1);
+    -webkit-transform: scale(1);
 }
