@@ -45,7 +45,6 @@ html, body {
 
 .sidebar {
   position: fixed;
-
   top: 45px;
   bottom: 0px;
   left: -180px;
@@ -76,9 +75,9 @@ html, body {
 .sidebar li:hover {
       color: white; }
 
-/*#sidebartoggler {
+#sidebartoggler {
   display: none;
-}*/
+}
   #sidebartoggler:checked + .page-wrap .sidebar {
     left: 0px;
     transition: .6s;

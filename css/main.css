@@ -394,3 +394,22 @@ label {
 input[type=checkbox]:checked ~ .to-be-changed {
 	color: red;
 }
+
+.hamb-wrapper {
+  position: relative;
+  margin: 1em 0;
+}
+.hamb-selector {
+  background: transparent;
+  width: 28px;
+  height: 22px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.hamb{
+  width: 28px;
+  height: 5px;
+  background: white;
+  margin-bottom: 3px;
+}
