@@ -31,10 +31,12 @@ body {
 a {
   text-decoration: none;
 }
-.h1 {
+
+.logo {
   text-transform: uppercase;
-  margin: 1.1em 0px;
-  line-height: 0em;
+  margin: 1.5em 0px;
+  line-height: 1.5em;
+  font-size: 12px;
 }
 
 button,
@@ -394,7 +396,7 @@ input[type=checkbox]:checked ~ .to-be-changed {
 
 .hamb-wrapper {
   position: relative;
-  margin: 1em 0;
+  margin: 1em 5px 0 0;
   padding: 0;
   width: 30px;
   overflow: hidden;
