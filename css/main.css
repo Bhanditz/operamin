@@ -416,6 +416,7 @@ input[type=checkbox]:checked ~ .to-be-changed {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  color: #FFF;
 }
 .hamb{
   width: 28px;
