@@ -404,11 +404,11 @@ input[type=checkbox]:checked ~ .to-be-changed {
   background-color: #000;
 }
 .hamb-selector {
-  width: 30px;
+  width: 100px;
   position: absolute;
   top: 0;
   left: 0;
-  padding: 5px 8px;
+  padding: 0px 30px;
   border: none;
   box-shadow: none;
   background-color: transparent;
