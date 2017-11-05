@@ -398,14 +398,24 @@ input[type=checkbox]:checked ~ .to-be-changed {
 .hamb-wrapper {
   position: relative;
   margin: 1em 0;
+  padding: 0;
+  width: 30px;
+  overflow: hidden;
+  background-color: #000;
 }
 .hamb-selector {
-  background: transparent;
-  width: 28px;
-  height: 22px;
+  width: 30px;
   position: absolute;
   top: 0;
   left: 0;
+  padding: 5px 8px;
+  border: none;
+  box-shadow: none;
+  background-color: transparent;
+  background-image: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 .hamb{
   width: 28px;
