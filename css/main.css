@@ -367,12 +367,6 @@ table,td {
   width: 40px;
 }
 
-.checkbox {
-    transform: scale(1.5);
-    -ms-transform: scale(1.5);
-    -webkit-transform: scale(1.5);
-}
-
 .hamb-wrapper {
   position: relative;
   margin: 0 10px 0 0;
@@ -401,4 +395,19 @@ table,td {
   height: 5px;
   background: white;
   margin-bottom: 3px;
+}
+
+.double {
+  zoom:2;
+  transform:scale(2);
+  -ms-transform:scale(2);
+  -webkit-transform:scale(2);
+  -o-transform:scale(2);
+  -moz-transform:scale(2);
+  transform-origin:0 0;
+  -ms-transform-origin:0 0;
+  -webkit-transform-origin:0 0;
+  -o-transform-origin:0 0;
+  -moz-transform-origin:0 0;
+  -webkit-transform-origin:0 0;
 }
