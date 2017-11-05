@@ -1,10 +1,5 @@
 body {
   font-family: 'Open Sans', sans-serif;
-  line-height: 1em;
-  line-height: 1.5;
-  font-weight: lighter;
-  -webkit-text-size-adjust: 100%; /* 2 */
-  -ms-text-size-adjust: 100%; /* 2 */
   margin:0;
   padding:0;
 }
@@ -36,8 +31,10 @@ body {
 a {
   text-decoration: none;
 }
-h1 {
+.h1 {
   text-transform: uppercase;
+  margin: 1.1em 0px;
+  line-height: 0em;
 }
 
 button,
@@ -416,7 +413,7 @@ input[type=checkbox]:checked ~ .to-be-changed {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  color: #FFF;
+  color: #FFF
 }
 .hamb{
   width: 28px;
