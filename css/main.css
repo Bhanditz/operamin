@@ -367,3 +367,9 @@ table,td {
 .outcome-title {
   width: 40px;
 }
+
+.checkbox {
+    transform: scale(2.);
+    -ms-transform: scale(2.);
+    -webkit-transform: scale(2.);
+}
