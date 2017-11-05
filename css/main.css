@@ -34,8 +34,7 @@ a {
 
 .logo {
   text-transform: uppercase;
-  margin: 1.5em 0px;
-  line-height: 1.5em;
+  margin: 1em 0;
   font-size: 12px;
 }
 
@@ -396,7 +395,7 @@ input[type=checkbox]:checked ~ .to-be-changed {
 
 .hamb-wrapper {
   position: relative;
-  margin: 1em 5px 0 0;
+  margin: 0 10px 0 0;
   padding: 0;
   width: 30px;
   overflow: hidden;
