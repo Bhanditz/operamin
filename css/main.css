@@ -96,8 +96,10 @@ a {
 .hamb-wrapper {
   position: relative;
   width: 30px;
-  margin: 1em 0;
+  margin: 1.5em 0;
   overflow: hidden;
+  background-color: #000;
+  font-size: 8px;
 }
 .hamb-bar {
   width: 100%;
@@ -109,14 +111,15 @@ a {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100px;
   height: 100%;
   padding: 0px 30px;
   border: none;
+  box-shadow: none;
   background-color: transparent;
   background-image: none;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  color: #FFF;
+  color: #FFF
 }
