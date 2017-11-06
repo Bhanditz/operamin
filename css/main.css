@@ -97,6 +97,7 @@ a {
   position: relative;
   width: 30px;
   margin: 1em 0;
+  overflow: hidden;
 }
 .hamb-bar {
   width: 100%;
