@@ -18,13 +18,15 @@ a {
 .bg-primary {
   background-color: #000;
 }
+.bg-primary-light {
+  background-color: #333;
+}
 .bg-lightgray {
   background-color: #efefef;
 }
 .link-more {
   margin: -5px 5px;
 }
-
 .btn {
   display: inline-block;
   padding: 6px 12px;
@@ -45,7 +47,6 @@ a {
   background-image: none;
   border: 1px solid transparent;
 }
-
 .btn-sm {
   display: inline-block;
   margin-bottom: 0;
@@ -66,27 +67,55 @@ a {
   background-image: none;
   border: 1px solid transparent;
 }
-
 .btn-primary {
   color: rgb(255, 255, 255);
   background-color: rgb(67, 149, 57);
   border-bottom-color: rgb(67, 149, 57);
 }
 .btn-block {
-  width: 100%;
   display: block;
+}
+.btn-full {
+  width: 100%;
 }
 .btn-group {
   margin: .5em 0;
 }
-
+.btn-half {
+  width: 49%;
+}
+.clearfix {
+  display: block;
+  clear: both;
+  overflow: hidden;
+}
+.ul-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  display: block;
+}
+.active {
+  background-color: rgba(67, 149, 57, 0.4);
+  border-bottom: 5px solid #439539;
+}
+.ellips {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.spacing-bottom {
+  margin-bottom: .5em;
+}
+.hidden {
+  display: none !important;
+}
 /*navigation styles*/
 .nav {
-  position: fixed;
-  top:0;
-  right: 0;
-  left: 0;
-  padding:0 1em;
+  padding: 0 1em;
+}
+.nav, .nav a {
   color: #FFF;
 }
 .logo {
@@ -122,4 +151,179 @@ a {
   -moz-appearance: none;
   appearance: none;
   color: #FFF
+}
+.list-subnav {
+  float: left;
+  padding: 5px;
+}
+/*select sport bet*/
+.list-inline {
+  float: left;
+  width: 20%;
+  margin: 0;
+  padding: 4px;
+  list-style: none;
+  text-align: center;
+  border-left: 2px solid #fff;
+}
+/* Icons */
+.icon-wrapper {
+  width: 1em;
+  height: 1em;
+  display: block;
+  margin: 0 auto;
+}
+.icons {
+  height: 100%;
+  width: 100%;
+  display: block;
+  background-repeat: no-repeat;
+}
+.img-football {
+  background-image: url(https://cdn.betway.co.za/images/Shared/sports/soccer.svg);
+}
+.img-rugby {
+  background-image: url(https://cdn.betway.co.za/images/Shared/sports/rugby.svg);
+}
+.img-tennis {
+  background-image: url(https://cdn.betway.co.za/images/Shared/sports/tennis.svg);
+}
+.img-basketball {
+  background-image: url(https://cdn.betway.co.za/images/Shared/sports/basketball.svg);
+}
+/*Choose bet*/
+.list-inline-checkbox {
+  float: left;
+  border-left: 1px solid #ccc;
+  width: 45%;
+  margin: 0;
+  padding: 0px 0px 5px 5px;
+  list-style: none;
+}
+.select-wrapper {
+  padding: 0;
+  margin: 0;
+  border: 1px solid #ccc;
+  width: 120px;
+  border-radius: 3px;
+  overflow: hidden;
+  background-color: #fff;
+}
+.select-wrapper .select {
+  padding: 5px 8px;
+  width: 130%;
+  border: none;
+  box-shadow: none;
+  background-color: transparent;
+  background-image: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+.select-wrapper .select:focus {
+  outline: none;
+}
+/* Bet list */
+.table, .table td {
+  padding: 0;
+  margin: 0
+}
+.table, .league {
+  width: 100%;
+  text-align: left;
+}
+.league {
+  font-size: 10px;
+}
+.th-select {
+  font-size: 0.8em;
+  width: 50%;
+}
+.clubs {
+  text-align: left;
+  font-size: 10px;
+  font-weight: bolder;
+}
+.sidebet {
+  text-align: center;
+  border: 1px solid #DEDFE4;
+  background-color: #f2f2f4;
+  max-width: 35px;
+  display: block;
+  float: right;
+}
+.clubone {
+  padding: 0 5px;
+  text-align: left;
+}
+.odds {
+  background-color: rgba(67, 149, 57, 0.4);
+  color: #24367E;
+  font-size: 12px;
+  border-top: 1px solid #b5b5b5;
+}
+.highlights--item {
+  background-color: #fff;
+  border-collapse: collapse;
+  width: 98.5%;
+  margin: 5px .75%;
+}
+.highlights {
+  background-color: #efefef;
+}
+.border-td {
+  height: 100%;
+  width: 1px;
+  background-color: #b5b5b5;
+}
+.picked {
+  background: #439539!important;
+  color: #fff!important;
+}
+
+.odds td button, .sidebet-card {
+  width: 100%;
+  color: #333;
+  display: block;
+}
+
+.panel {
+  padding: 0 1em;
+  border: 1px solid #333;
+  font-size: 85%;
+}
+
+.eventDate {
+  color: #8a8a8a;
+}
+
+.eventActions {
+  margin-top: -5px;
+}
+
+.inline-potato,.inline-potato li {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+
+.label {
+  display: inline;
+  line-height: 1;
+  font-size: 80%;
+  color: #333;
+  border: 1px solid #333;
+  text-align: center;
+  white-space: nowrap;
+  padding: 3px 4px;
+  border-radius: 4px;
+}
+
+.label.primary {
+  color: #333;
+  border: 1px solid #439539;
+}
+
+.outcome-title {
+  width: 40px;
 }
