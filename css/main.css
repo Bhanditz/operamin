@@ -374,6 +374,7 @@ table,td {
   width: 30px;
   overflow: hidden;
   background-color: #000;
+  font-size: 10px;
 }
 .hamb-selector {
   width: 100px;
