@@ -162,7 +162,7 @@
         <li class="list-inline-checkbox">
           <input type="checkbox" class="checkbox" name="sport9" id="La_Liga_9"> La Liga 9
         </li>
-        </ul>
+      </ul>
       <div class="clearfix spacing-bottom">
         <button class="btn btn-primary pull-left" type="button" onclick="toggle()">Update</button>
         <button class="btn btn-primary pull-right" type="button" onclick="toggle()">Close</button>
@@ -285,7 +285,16 @@
         </tbody>
       </table>
     </div>
-
+    
+    <div class="pagination-wrapper">
+      <ul class="pagination">
+        <li><a href="#">1</a></li>
+        <li class="active"><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li class="disabled"><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+      </ul>
+    </div>
   </section>
 
   <script type="text/javascript" src="./js/jquery.min.js"></script>
@@ -305,32 +314,32 @@
   }
 
   function addBet(t, e, i, c, n, o, a, r, s, p, l, d) {
-      // Count bets placed.
-      if (betslips.indexOf(t) < 0) {
-        betslips.push(t);
-        count += 1;
-      }
+    // Count bets placed.
+    if (betslips.indexOf(t) < 0) {
+      betslips.push(t);
+      count += 1;
+    }
 
-      // var u = "https://www.betika.com/lite/betslip/add";
-      // $.post(u, {
-      //     match_id: t,
-      //     sub_type_id: e,
-      //     odd_key: i,
-      //     custom: c,
-      //     special_bet_value: n,
-      //     bet_type: o,
-      //     home: a,
-      //     away: r,
-      //     odd: s,
-      //     oddtype: p,
-      //     parentmatchid: l,
-      //     pos: d
-      // }, function(e) {
-          var i = t;
-          $("." + i).removeClass("selected"),
-          $("." + c).addClass("selected"),
-          $(".slip-counter").html(count)
-      // })
+    // var u = "https://www.betika.com/lite/betslip/add";
+    // $.post(u, {
+    //     match_id: t,
+    //     sub_type_id: e,
+    //     odd_key: i,
+    //     custom: c,
+    //     special_bet_value: n,
+    //     bet_type: o,
+    //     home: a,
+    //     away: r,
+    //     odd: s,
+    //     oddtype: p,
+    //     parentmatchid: l,
+    //     pos: d
+    // }, function(e) {
+    var i = t;
+    $("." + i).removeClass("selected"),
+    $("." + c).addClass("selected"),
+    $(".slip-counter").html(count)
+    // })
   }
   </script>
 
