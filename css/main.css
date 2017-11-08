@@ -9,6 +9,14 @@ body {
 a {
   text-decoration: none;
 }
+.error {
+  color: #ff0000;
+  font-weight: bold;
+}
+.delete {
+  font-weight: 700;
+  color: #333;
+}
 .pull-left {
   float: left;
 }
@@ -17,6 +25,9 @@ a {
 }
 .bg-primary {
   background-color: #000;
+}
+.bg-secondary {
+  background-color: #439536;
 }
 .bg-primary-light {
   background-color: #333;
@@ -68,9 +79,15 @@ a {
   border: 1px solid transparent;
 }
 .btn-primary {
-  color: rgb(255, 255, 255);
-  background-color: rgb(67, 149, 57);
-  border-bottom-color: rgb(67, 149, 57);
+  color: #FFF;
+  background-color: #439539;
+  border:1px solid #439539;
+}
+
+.btn-default {
+  color: #4e4e4e;
+  background-color: #fff;
+  border: 1px solid #333;
 }
 .btn-bettingmatch {
   background-color: #bee3b9;
@@ -337,12 +354,10 @@ a {
 .pagination-wrapper {
   text-align: center;
 }
-
 .pagination {
   display: inline-block;
   padding-left: 0;
   margin: 20px 0;
-  border-radius: 4px;
 }
 .pagination > li {
   display: inline;
@@ -357,15 +372,6 @@ a {
   background-color: #fff;
   border: 1px solid #ddd;
   margin-left: -1px;
-}
-.pagination > li:first-child > a {
-  margin-left: 0;
-  border-bottom-left-radius: 4px;
-  border-top-left-radius: 4px;
-}
-.pagination > li:last-child > a {
-  border-bottom-right-radius: 4px;
-  border-top-right-radius: 4px;
 }
 
 .pagination > li > a:focus {
@@ -384,10 +390,32 @@ a {
 }
 
 .pagination > .disabled > a,
-.pagination > .disabled > a:hover,
 .pagination > .disabled > a:focus {
   color: #777777;
   background-color: #fff;
   border-color: #ddd;
   cursor: not-allowed;
+}
+
+/*betslip*/
+.betslip-header {
+  padding: 0 1em;
+  color: #FFF;
+  font-weight: bold;
+}
+.betslip-panel {
+  border-bottom: 1px solid #ccc;
+}
+.betslip-panel-inner {
+  overflow: hidden;
+  padding-left: 1em;
+}
+.betslip-total-odds {
+  font-weight: bold;
+  font-size: 16px;
+}
+.betslip-total-input {
+  margin-top: .5em;
+  padding: 5px;
+  text-align: right;
 }
