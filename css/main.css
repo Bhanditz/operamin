@@ -98,9 +98,6 @@ input[type="text"]:disabled {
 .btn-bettingmatch {
   background-color: #bee3b9;
 }
-.btn-betslip {
-  margin: .5em 0;
-}
 .btn-block {
   display: block;
 }
@@ -108,7 +105,7 @@ input[type="text"]:disabled {
   width: 100%;
 }
 .btn-group {
-  margin: .5em 0;
+  margin: .5em;
 }
 .btn-half {
   width: 49%;
@@ -224,9 +221,11 @@ input[type="text"]:disabled {
   background-image: url(https://cdn.betway.co.za/images/Shared/sports/basketball.svg);
 }
 /*Choose bet*/
+.ul-bets {
+  margin: .5em 0;
+}
 .list-inline-checkbox {
   float: left;
-  border-left: 1px solid #ccc;
   width: 45%;
   margin: 0;
   padding: 0px 0px 5px 5px;
