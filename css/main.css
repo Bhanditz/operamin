@@ -8,6 +8,7 @@ body {
 /*global styles*/
 a {
   text-decoration: none;
+  color: #333;
 }
 .error {
   color: #ff0000;
@@ -38,8 +39,11 @@ input[type="text"]:disabled {
 .bg-primary-light {
   background-color: #333;
 }
-.bg-lightgray {
+.bg-light-gray {
   background-color: #efefef;
+}
+.bg-dark-gray {
+  background-color: #b3b3b3;
 }
 .link-more {
   margin: -5px 5px;
@@ -208,6 +212,12 @@ input[type="text"]:disabled {
   display: block;
   background-repeat: no-repeat;
 }
+.icons-footer {
+  height: 100%;
+  width: 100%;
+  display: block;
+  background-repeat: no-repeat;
+}
 .img-football {
   background-image: url(https://cdn.betway.co.za/images/Shared/sports/soccer.svg);
 }
@@ -219,6 +229,25 @@ input[type="text"]:disabled {
 }
 .img-basketball {
   background-image: url(https://cdn.betway.co.za/images/Shared/sports/basketball.svg);
+}
+
+.icon-westham {
+  background-image: url(https://cdn.betway.co.za/images/Shared/other/westham.svg);
+}
+.icon-ashanti {
+  background-image: url(https://cdn.betway.co.za/images/Shared/other/ashanti.svg);
+}
+.icon-ondu {
+  background-image: url(https://cdn.betway.co.za/images/Shared/other/ondu.svg);
+}
+.icon-mathari {
+  background-image: url(https://cdn.betway.co.za/images/Shared/other/mathari_mobi.png);
+}
+.icon-kobs {
+  background-image: url(https://cdn.betway.co.za/images/Shared/other/kobs.svg);
+}
+.icon-power {
+  background-image: url(https://cdn.betway.co.za/images/Shared/other/power.svg);
 }
 /*Choose bet*/
 .ul-bets {
@@ -427,4 +456,36 @@ input[type="text"]:disabled {
   padding: 5px;
   text-align: right;
   width: 100px;
+}
+
+/*footer*/
+.footer {
+  padding: 1em;
+  color: #333;
+}
+.list-footer {
+  float: left;
+  width: 50%;
+}
+.list-footer-icons {
+  float: left;
+  width: 25%;
+  height: 50px;
+  margin: .5em 0;
+}
+
+.sprite {
+  background-image: url(https://cdn.betway.co.za/images/shared/sprite/spritesheet.png);
+  background-repeat: no-repeat;
+  display: block;
+}
+.sprite-westerncapegovernment {
+  width: 150px;
+  height: 66px;
+  background-position: -5px -552px;
+}
+.sprite-sidinstanteft {
+  width: 100px;
+  height: 61px;
+  background-position: -579px -237px;
 }
