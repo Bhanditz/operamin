@@ -485,6 +485,27 @@ input[type="text"]:disabled {
   background-image: url(https://cdn.betway.co.za/images/shared/sprite/spritesheet.png);
   background-repeat: no-repeat;
   display: block;
+  transform: scale();
+}
+.sprite-overage {
+    width: 50px;
+    height: 50px;
+    background-position: -558px -64px;
+}
+.sprite-fb {
+    width: 50px;
+    height: 50px;
+    background-position: -397px -152px;
+}
+.sprite-livechat {
+    width: 50px;
+    height: 50px;
+    background-position: -520px -354px;
+}
+.sprite-twitter {
+    width: 50px;
+    height: 50px;
+    background-position: -640px -308px;
 }
 .sprite-westerncapegovernment {
   width: 150px;
