@@ -474,6 +474,13 @@ input[type="text"]:disabled {
   margin: .5em 0;
 }
 
+
+/*Sprite*/
+.list-footer-sprite {
+  float: left;
+  width: 50%;
+  height: 70px;
+}
 .sprite {
   background-image: url(https://cdn.betway.co.za/images/shared/sprite/spritesheet.png);
   background-repeat: no-repeat;
@@ -488,4 +495,24 @@ input[type="text"]:disabled {
   width: 100px;
   height: 61px;
   background-position: -579px -237px;
+}
+.sprite-nationalgamblingboard {
+  width: 150px;
+  height: 49px;
+  background-position: -326px -490px;
+}
+.sprite-visaandmastercard {
+  width: 180px;
+  height: 46px;
+  background-position: -486px -496px;
+}
+.sprite-responsiblegamblingprogramme {
+  width: 150px;
+  height: 68px;
+  background-position: -579px -159px;
+}
+.sprite-ipay {
+  width: 150px;
+  height: 66px;
+  background-position: -360px -283px;
 }
