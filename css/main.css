@@ -98,6 +98,9 @@ input[type="text"]:disabled {
 .btn-bettingmatch {
   background-color: #bee3b9;
 }
+.btn-betslip {
+  margin: .5em 0;
+}
 .btn-block {
   display: block;
 }
