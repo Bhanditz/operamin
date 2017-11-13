@@ -537,3 +537,18 @@ input[type="text"]:disabled {
   height: 66px;
   background-position: -360px -283px;
 }
+
+/*account*/
+.list-account {
+  float: left;
+  padding: 10px 0px;
+  width: 30%;
+  height: 30px;
+  margin: 0 5px 5px 0;
+  text-align: center;
+  border: 2px solid #8f8f8f;
+}
+.link-account {
+  display: block;
+  height: 100%;
+}
