@@ -419,6 +419,7 @@ input[type="text"]:disabled {
 }
 
 /*betslip*/
+.header,
 .betslip-header {
   padding: 0 1em;
   color: #FFF;

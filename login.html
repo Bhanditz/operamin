@@ -42,7 +42,7 @@
         <a href="register.html" class="btn btn-primary">Sign Up</a>
       </div>
     </div>
-    <div class="nav bg-primary-light clearfix spacing-bottom">
+    <div class="nav bg-primary-light clearfix">
       <ul class="ul-list">
         <li class="list-subnav active"><a href="#">Sports</a></li>
         <li class="list-subnav"><a href="#">Betting</a></li>
@@ -53,15 +53,15 @@
   </section>
 
   <section>
+    <div class="header bg-secondary clearfix">
+      <h2>Login</h2>
+    </div>
     <div class="panel clearfix spacing-bottom" id="loginContainer">
       <form action="/Account/LoginConfirmation" id="LoginOperaMiniForm" method="post">
         <input data-val="true" data-val-required="Enter your mobile number" id="DialingCode" name="DialingCode" type="hidden" value="+27">
         <input id="ReturnURL" name="ReturnURL" type="hidden" value="~/Account/MyAccount">
 
         <div id="login-form">
-        <h1 class="theFont">
-          Login
-        </h1>
         <p>Please verify your account details to continue:</p>
         <div class="form-group form-group-sm">
           <div class="col-xs-12">
