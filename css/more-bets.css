@@ -38,6 +38,10 @@
     width: 100%;
 }
 
+.btn-breadcrumb .btn {
+    min-height: 35px;
+}
+
 .btn-bettingmatch .outcome-title span {
     display: block;
     white-space: nowrap;
