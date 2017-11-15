@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Betway test file</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+  <meta name="HandheldFriendly" content="true" />
+
+  <!-- Custom Fonts / CSS / JS -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./css/more-bets.css">
+</head>
+
+<body>
+  <div class="body-content col-xs-12 col-md-8" id="main" style="background-color:white;">
+
+
+
+    <script src="/bundles/HomePageMasterBundle.js?v=ZMU2bwQW-DuotHztgyXs9Uq0SjtrqEh661is4MHa2Ag1"></script>
+
+    <div id="MultiMarket">
+      <div class="row heading-panel">
+        <div class="col-xs-10 col-sm-11 col-md-11 col-lg-11">
+          <div class="panel-left-header multimarket-trapezoid ">
+            <div class="h2" style="vertical-align:baseline;">
+
+              <div id="multi-head" class="heading-multimarket colour " style="background-color: rgb(67, 149, 57); border-bottom-color: rgb(67, 149, 57);">
+
+                <div id="5dca49f3-4699-e711-80c2-00155d0020b1" data-isliveinplay-multimarket="False" data-event-id="5dca49f3-4699-e711-80c2-00155d0020b1" data-eventtitle="Bialystok v Polonia Warszawa" data-sporttitle="Soccer" data-eventdate="2017-11-15 18:00" class="">
+                  <a class="date-heading theFont">
+                    15 Nov 18:00
+                  </a>
+
+                  <label class="event-status-heading" data-event-score=""></label>
+                  <label class="event-status-heading" style="padding-right: 5px;" data-event-time=""></label>
+
+                  <label class="event-status-heading" style="padding-right: 5px;" data-event-status=""></label>
+                </div>
+                <br class="">
+                <a class="event-heading">
+                  <span class="ellipsMultiMarket theFont">Bialystok v Polonia Warszawa</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-2 col-sm-1 col-md-1 col-lg-1">
+          <div class="panel-right-header">
+            <div class="h2">
+              <div class="heading-panel-heading theOtherFont">
+                <div class="btn btn-Back"><a href="/#matchbetting" style="text-decoration:none; color:black; font-size:12px" class="">Back</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="row" style="margin-top:5px;">
+
+
+        <script class="">
+        function doSearch(teamName) {
+          window.location.href = "/Home/Search?term=" + teamName;
+        }
+
+        function ShowFilter(e, isMobileFilter) {
+          if (isMobileFilter)
+          showMobileFiltersOnly();
+
+          e.stopPropagation();
+          onFilterDropdownClick();
+          $('#filterleagues-button').dropdown("toggle");
+        }
+
+        function ResetBreadCrumbToDefaultSport(e, marketTypeCategoryId) {
+          try {
+            showOverlay();
+
+            var listElement = $('*[data-filterleagues-list-markettypecategory*="' + marketTypeCategoryId + '"]');
+            listElement.find('li.league-item').removeClass('isChecked');
+            listElement.find('li.league-item').children('input').prop('checked', false);
+            listElement.find('li.league-item').children('span').removeClass('glyphicon-check');
+            listElement.find('li.league-item').children('span').addClass('glyphicon-unchecked');
+            pat.post("/Event/ClearLeagueFilter", { marketTypeCategoryId: marketTypeCategoryId })
+            .done(function (data) {
+              pat.post("/Event/GetEventsBySportId",
+              {
+                sportConfigId: '00000000-0000-0000-da7a-000000550001',
+                marketTypeCategoryId: marketTypeCategoryId
+              })
+              .done(function (data) {
+                var allEvents = "/";
+                if (marketTypeCategoryId == "00000000-0000-0000-da7a-000000580003")
+                allEvents = "/Event/InPlay";
+                window.location.href = allEvents;
+              });
+
+            });
+          } catch (err) {
+            console.log(err.message);
+          }
+        }
+
+        function ResetBreadCrumbToSport(e, marketTypeCategoryId) {
+          try {
+            showOverlay();
+            e.stopPropagation();
+            pat.post("/Event/ClearLeagueFilter", { marketTypeCategoryId: marketTypeCategoryId })
+            .done(function (data) {
+              var allEvents = "/";
+              if (marketTypeCategoryId == "00000000-0000-0000-da7a-000000580003")
+              allEvents = "/Event/InPlay";
+              window.location.href = allEvents;
+            });
+          }
+          catch (err) {
+            console.log(err.message);
+          }
+        }
+
+        function SetRegionFilterAndReload(regionId, isMultiMarket) {
+          //resetLeagues();
+          filterLeaguesByRegionId(regionId, isMultiMarket, '00000000-0000-0000-da7a-000000580001');
+
+        }
+
+        function SetLeagueFilterAndReload(leagueid, isMultiMarket) {
+          if (isMultiMarket == 'true') {
+            filterLeaguesByLeagueId(leagueid, isMultiMarket, '00000000-0000-0000-da7a-000000580001');
+          }
+        }
+        </script>
+
+
+        <div id="breadCrumbContainer" class="">
+          <div class="btn-group btn-breadcrumb">
+            <a class="btn btn-default" onclick="ResetBreadCrumbToDefaultSport(event, '00000000-0000-0000-da7a-000000580001')"><b class=""><i class="glyphicon glyphicon-home"></i></b> </a>
+
+            <a class="btn btn-default" title="Find more Soccer events" alt="Find more Soccer events" onclick="ResetBreadCrumbToSport(event,'00000000-0000-0000-da7a-000000580001')">Soccer</a>
+            <a class="btn btn-default" title="Find more Poland events " alt="Find more Poland events " onclick="SetRegionFilterAndReload('d39a9230-8608-e711-80d3-00155d001f88', 'true');showOverlay();">Poland</a>
+            <a class="btn btn-default" title="Find more CLJ, East events" alt="Find more CLJ, East events" onclick="SetLeagueFilterAndReload('3c61c65a-2f19-e711-80c7-00155d002057', 'true');showOverlay();">CLJ, East</a>
+            <a class="btn btn-default" title="Find more games" alt="Find more games"><span class="teamLink homeTeam" onclick="doSearch('Bialystok')">Bialystok</span><span id="TeamSeparator" class=""> v </span><span class="teamLink awayTeam" onclick="doSearch('Polonia Warszawa')">Polonia Warszawa</span></a>
+          </div>
+        </div>
+
+      </div>
+      <div class="lmt-container sr-widget sr-widget-level-0 sr-widgets-matchhead2head sr-widgetHeight-auto sr-small sr-ground-matches-text-hidden sr-sid-1" style="margin-top: 0px;margin-left: -15px;margin-right: -15px;overflow-x:hidden" data-sr-lang="en" data-sr-handle="0"><div class="sr-content" style="height: 35px; overflow: hidden;"><div class="sr-teams-header sr-clearfix"> <div class="sr-team-header sr-team-header-home   sr-clearfix">  <div class="sr-crest sr-crestteam-home"><img class="sr-crest-img sr-crest-home " src="https://ls.sportradar.com/ls/crest/small/114683.png" alt="" onload="SRLive.event.trigger('crest_loaded', { img: this, defaultUrl: 'https://ls.sportradar.com/clients/ssm/img/home-default-logo.png' }, false, 'common.crestmanager_10');"></div> <div class="sr-team-name sr-team-name-home">Bialystok</div> <div class="sr-team-name-abbr-home sr-team-name">JBI</div>    </div> <div class="sr-team-header sr-team-header-away   sr-clearfix">  <div class="sr-crest sr-crestteam-away"><img class="sr-crest-img sr-crest-away " src="https://ls.sportradar.com/ls/crest/small/114695.png" alt="" onload="SRLive.event.trigger('crest_loaded', { img: this, defaultUrl: 'https://ls.sportradar.com/clients/ssm/img/away-default-logo.png' }, false, 'common.crestmanager_10');"></div> <div class="sr-team-name sr-team-name-away">Polonia</div> <div class="sr-team-name-abbr-away sr-team-name">PWA</div>    </div> </div><div class="sr-pills" data-sr-tabs-num="3"> <div class="sr-pills-header sr-subheader-1 sr-clearfix"> <div class="sr-pill sr-active" data-sr-uid="tabs-9-1" data-sr-id="1" data-sr-tabs-id="tabs-9">Performance</div><div class="sr-pill" data-sr-uid="tabs-9-2" data-sr-id="2" data-sr-tabs-id="tabs-9">Last</div><div class="sr-pill" data-sr-uid="tabs-9-3" data-sr-id="3" data-sr-tabs-id="tabs-9">Next</div> </div> <div class="sr-pills-content sr-clearfix"><div class="sr-pill-pane sr-active" data-sr-uid="tabs-9-1" data-sr-id="1" data-sr-tabs-id="tabs-9"><div class="sr-nano-scroller sr-nano-scroller-level-0"><div class="sr-nano-scroller-content" tabindex="0" style="margin-right: 0px;"><div class="sr-performance-tab"> <div class="sr-container-title">Form</div> <div class="sr-forms sr-clearfix">  <div class="sr-form sr-form-home sr-form-soccer"> <div class="sr-form-inner sr-overallbar-rl sr-active" style="width: 79%;">  </div> </div>   <div class="sr-form-score">  79 <span class="">%</span>  36 </div>   <div class="sr-form sr-form-away sr-form-soccer"> <div class="sr-form-inner sr-overallbar-lr sr-active" style="width: 36%;">  </div> </div>  </div> <div class="sr-wdl-container sr-clearfix"> <div class="sr-wdl-wrapper sr-wdl-wrapper-home"> <div class="sr-wdl-arrow-wrapper sr-wdl-arrow-wrapper-home"><div class="sr-wdl-arrow"></div></div> <div class="sr-wdl sr-clearfix sr-wdl-home"> <div class="sr-wdl-arow-head"></div> <div class="sr-wdl-arrow-body"></div>   <div class="sr-wdl-outcome-wrapper" data-sr-match-id="12243934"> <div class="sr-wdl-outcome sr-wdl-outcome-W"> W </div> <div class="sr-tooltip-wdl sr-tooltip sr-tooltip-bottom "> </div> </div>  <div class="sr-wdl-outcome-wrapper" data-sr-match-id="12243968"> <div class="sr-wdl-outcome sr-wdl-outcome-W"> W </div> <div class="sr-tooltip-wdl sr-tooltip sr-tooltip-bottom "> </div> </div>  <div class="sr-wdl-outcome-wrapper" data-sr-match-id="12243990"> <div class="sr-wdl-outcome sr-wdl-outcome-W"> W </div> <div class="sr-tooltip-wdl sr-tooltip sr-tooltip-bottom "> </div> </div>  <div class="sr-wdl-outcome-wrapper" data-sr-match-id="12244002"> <div class="sr-wdl-outcome sr-wdl-outcome-D"> D </div> <div class="sr-tooltip-wdl sr-tooltip sr-tooltip-bottom "> </div> </div>  <div class="sr-wdl-outcome-wrapper" data-sr-match-id="12244020"> <div class="sr-wdl-outcome sr-wdl-outcome-L"> L </div> <div class="sr-tooltip-wdl sr-tooltip sr-tooltip-bottom "> </div> </div>   </div> </div> <div class="sr-wdl-wrapper sr-wdl-wrapper-away"> <div class="sr-wdl-arrow-wrapper sr-wdl-arrow-wrapper-away"><div class="sr-wdl-arrow"></div></div> <div class="sr-wdl sr-clearfix sr-wdl-away"> <div class="sr-wdl-arow-head"></div> <div class="sr-wdl-arrow-body"></div>   <div class="sr-wdl-outcome-wrapper" data-sr-match-id="12243936"> <div class="sr-wdl-outcome sr-wdl-outcome-D"> D </div> <div class="sr-tooltip-wdl sr-tooltip sr-tooltip-bottom sr-tooltip-right"> </div> </div>  <div class="sr-wdl-outcome-wrapper" data-sr-match-id="12243966"> <div class="sr-wdl-outcome sr-wdl-outcome-W"> W </div> <div class="sr-tooltip-wdl sr-tooltip sr-tooltip-bottom sr-tooltip-right"> </div> </div>  <div class="sr-wdl-outcome-wrapper" data-sr-match-id="12243994"> <div class="sr-wdl-outcome sr-wdl-outcome-L"> L </div> <div class="sr-tooltip-wdl sr-tooltip sr-tooltip-bottom sr-tooltip-right"> </div> </div>  <div class="sr-wdl-outcome-wrapper" data-sr-match-id="12243996"> <div class="sr-wdl-outcome sr-wdl-outcome-D"> D </div> <div class="sr-tooltip-wdl sr-tooltip sr-tooltip-bottom sr-tooltip-right"> </div> </div>  <div class="sr-wdl-outcome-wrapper" data-sr-match-id="12244026"> <div class="sr-wdl-outcome sr-wdl-outcome-D"> D </div> <div class="sr-tooltip-wdl sr-tooltip sr-tooltip-bottom sr-tooltip-right"> </div> </div>   </div> </div> </div>  <div class="sr-heading-last-meetings sr-container-title">Last meetings</div> <div class="sr-matchlist">  <div class="sr-tournament-info sr-header-3 sr-clearfix"> <div class="sr-date sr-part">27 May, 2017</div> <div class="sr-sep sr-part">|</div> <div class="sr-flag sr-part"> <div class="sr-crest"> <img class="sr-crest-img sr-crest- " src="https://ls.sportradar.com/ls/crest/small/pl.png" alt=""> </div> </div> <div class="sr-name sr-part">CLJ,&nbsp;East&nbsp;|&nbsp;Matchday&nbsp;29</div> <div style="clear:both;" class=""></div> </div> <div class="sr-match-container sr-border " data-sr-matchid="10722586"> <div class="sr-match-container-inner sr-widget sr-widget-level-1 sr-widgets-matchheader sr-size-extra-small sr-size-small sr-size-name-mini" id="match-10722586-10" data-sr-lang="en" data-sr-handle="12"><div class="sr-content"><div class="sr-lmts-scoreboard-wraper sr-lmts-sid-1 sr-sid-1 sr-selectable sr-embedded">  <div class="sr-scoreboard srw-lmts-scoreboard-inner"> <div class="sr-result-wraper sr-result-fullscore sr-result-fullscore-embedded sr-result-wraper-p sr-result-soccer"> <div class="sr-status-info sr-matchheader-soccer"> <div class="sr-status-info-holder"> <div class="sr-status-info-wraper ">  <div class="sr-status-info-center">End</div>  </div> </div> </div> <div class="sr-score-separator"> </div> <div class="sr-team-home sr-team-side-left"> <div class="sr-team-name " title="Bialystok"> <div class="sr-team-crests  ">       <div class="sr-crest"><img class="sr-crest-img sr-crest-home " src="https://ls.sportradar.com/ls/crest/small/114683.png" alt="" onload="SRLive.event.trigger('crest_loaded', { img: this, defaultUrl: 'https://ls.sportradar.com/clients/ssm/img/home-default-logo.png' }, false, 'common.crestmanager_10');"></div>   <span class="sr-full  sr-ltr-text">Bialystok</span> <span class="sr-abbr ">JBI</span>  </div> </div> </div> <div class="sr-middle "> <div class="sr-middle-wrapper"> <div class="sr-result"> <div class="sr-result-left sr-result-home "> <div class="sr-result-value sr-home">0</div> </div> <div class="sr-separator">:</div> <div class="sr-result-right sr-result-away "> <div class="sr-result-value sr-away">0</div> </div> </div>  </div> </div> <div class="sr-team-away sr-team-side-right"> <div class="sr-team-name " title="Polonia"> <div class="sr-team-crests  ">       <div class="sr-crest"><img class="sr-crest-img sr-crest-away " src="https://ls.sportradar.com/ls/crest/small/114695.png" alt="" onload="SRLive.event.trigger('crest_loaded', { img: this, defaultUrl: 'https://ls.sportradar.com/clients/ssm/img/away-default-logo.png' }, false, 'common.crestmanager_10');"></div>   <span class="sr-full  sr-ltr-text">Polonia</span> <span class="sr-abbr ">PWA</span>  </div> </div> </div> </div> </div> </div></div></div> <div class="sr-odds-container sr-clearfix"><div id="odds-10722586-10" class="sr-odds-item sr-odd-large"></div></div>  </div>  <div class="sr-tournament-info sr-header-3 sr-clearfix"> <div class="sr-date sr-part">5 Nov, 2016</div> <div class="sr-sep sr-part">|</div> <div class="sr-flag sr-part"> <div class="sr-crest"> <img class="sr-crest-img sr-crest- " src="https://ls.sportradar.com/ls/crest/small/pl.png" alt=""> </div> </div> <div class="sr-name sr-part">CLJ,&nbsp;East&nbsp;|&nbsp;Matchday&nbsp;14</div> <div style="clear:both;" class=""></div> </div> <div class="sr-match-container sr-border " data-sr-matchid="9877781"> <div class="sr-match-container-inner sr-widget sr-widget-level-1 sr-widgets-matchheader sr-size-extra-small sr-size-small sr-size-name-mini" id="match-9877781-11" data-sr-lang="en" data-sr-handle="13"><div class="sr-content"><div class="sr-lmts-scoreboard-wraper sr-lmts-sid-1 sr-sid-1 sr-embedded">  <div class="sr-scoreboard srw-lmts-scoreboard-inner"> <div class="sr-result-wraper sr-result-fullscore sr-result-fullscore-embedded sr-result-wraper-p sr-result-soccer"> <div class="sr-status-info sr-matchheader-soccer"> <div class="sr-status-info-holder"> <div class="sr-status-info-wraper ">  <div class="sr-status-info-center">End</div>  </div> </div> </div> <div class="sr-score-separator"> </div> <div class="sr-team-home sr-team-side-left"> <div class="sr-team-name " title="Polonia"> <div class="sr-team-crests  ">       <div class="sr-crest"><img class="sr-crest-img sr-crest-home " src="https://ls.sportradar.com/ls/crest/small/114695.png" alt="" onload="SRLive.event.trigger('crest_loaded', { img: this, defaultUrl: 'https://ls.sportradar.com/clients/ssm/img/home-default-logo.png' }, false, 'common.crestmanager_10');"></div>   <span class="sr-full sr-team-loser sr-ltr-text">Polonia</span> <span class="sr-abbr sr-team-loser">PWA</span>  </div> </div> </div> <div class="sr-middle "> <div class="sr-middle-wrapper"> <div class="sr-result"> <div class="sr-result-left sr-result-home  sr-team-loser "> <div class="sr-result-value sr-home">0</div> </div> <div class="sr-separator">:</div> <div class="sr-result-right sr-result-away "> <div class="sr-result-value sr-away">2</div> </div> </div>  </div> </div> <div class="sr-team-away sr-team-side-right"> <div class="sr-team-name " title="Bialystok"> <div class="sr-team-crests  ">       <div class="sr-crest"><img class="sr-crest-img sr-crest-away " src="https://ls.sportradar.com/ls/crest/small/114683.png" alt="" onload="SRLive.event.trigger('crest_loaded', { img: this, defaultUrl: 'https://ls.sportradar.com/clients/ssm/img/away-default-logo.png' }, false, 'common.crestmanager_10');"></div>   <span class="sr-full sr-team-winner sr-ltr-text">Bialystok</span> <span class="sr-abbr sr-team-winner">JBI</span>  </div> </div> </div> </div> </div> </div></div></div> <div class="sr-odds-container sr-clearfix"><div id="odds-9877781-11" class="sr-odds-item sr-odd-large"></div></div>  </div>  <div class="sr-tournament-info sr-header-3 sr-clearfix"> <div class="sr-date sr-part">2 Apr, 2016</div> <div class="sr-sep sr-part">|</div> <div class="sr-flag sr-part"> <div class="sr-crest"> <img class="sr-crest-img sr-crest- " src="https://ls.sportradar.com/ls/crest/small/pl.png" alt=""> </div> </div> <div class="sr-name sr-part">CLJ,&nbsp;East&nbsp;|&nbsp;Matchday&nbsp;23</div> <div style="clear:both;" class=""></div> </div> <div class="sr-match-container sr-border " data-sr-matchid="8977955"> <div class="sr-match-container-inner sr-widget sr-widget-level-1 sr-widgets-matchheader sr-size-extra-small sr-size-small sr-size-name-mini" id="match-8977955-12" data-sr-lang="en" data-sr-handle="14"><div class="sr-content"><div class="sr-lmts-scoreboard-wraper sr-lmts-sid-1 sr-sid-1 sr-embedded">  <div class="sr-scoreboard srw-lmts-scoreboard-inner"> <div class="sr-result-wraper sr-result-fullscore sr-result-fullscore-embedded sr-result-wraper-p sr-result-soccer"> <div class="sr-status-info sr-matchheader-soccer"> <div class="sr-status-info-holder"> <div class="sr-status-info-wraper ">  <div class="sr-status-info-center">End</div>  </div> </div> </div> <div class="sr-score-separator"> </div> <div class="sr-team-home sr-team-side-left"> <div class="sr-team-name " title="Bialystok"> <div class="sr-team-crests  ">       <div class="sr-crest"><img class="sr-crest-img sr-crest-home " src="https://ls.sportradar.com/ls/crest/small/114683.png" alt="" onload="SRLive.event.trigger('crest_loaded', { img: this, defaultUrl: 'https://ls.sportradar.com/clients/ssm/img/home-default-logo.png' }, false, 'common.crestmanager_10');"></div>   <span class="sr-full  sr-ltr-text">Bialystok</span> <span class="sr-abbr ">JBI</span>  </div> </div> </div> <div class="sr-middle "> <div class="sr-middle-wrapper"> <div class="sr-result"> <div class="sr-result-left sr-result-home "> <div class="sr-result-value sr-home">1</div> </div> <div class="sr-separator">:</div> <div class="sr-result-right sr-result-away "> <div class="sr-result-value sr-away">1</div> </div> </div>  </div> </div> <div class="sr-team-away sr-team-side-right"> <div class="sr-team-name " title="Polonia"> <div class="sr-team-crests  ">       <div class="sr-crest"><img class="sr-crest-img sr-crest-away " src="https://ls.sportradar.com/ls/crest/small/114695.png" alt="" onload="SRLive.event.trigger('crest_loaded', { img: this, defaultUrl: 'https://ls.sportradar.com/clients/ssm/img/away-default-logo.png' }, false, 'common.crestmanager_10');"></div>   <span class="sr-full  sr-ltr-text">Polonia</span> <span class="sr-abbr ">PWA</span>  </div> </div> </div> </div> </div> </div></div></div> <div class="sr-odds-container sr-clearfix"><div id="odds-8977955-12" class="sr-odds-item sr-odd-large"></div></div>  </div>  <div class="sr-tournament-info sr-header-3 sr-clearfix"> <div class="sr-date sr-part">20 Sep, 2015</div> <div class="sr-sep sr-part">|</div> <div class="sr-flag sr-part"> <div class="sr-crest"> <img class="sr-crest-img sr-crest- " src="https://ls.sportradar.com/ls/crest/small/pl.png" alt=""> </div> </div> <div class="sr-name sr-part">CLJ,&nbsp;East&nbsp;|&nbsp;Matchday&nbsp;8</div> <div style="clear:both;" class=""></div> </div> <div class="sr-match-container sr-border " data-sr-matchid="7604574"> <div class="sr-match-container-inner sr-widget sr-widget-level-1 sr-widgets-matchheader sr-size-extra-small sr-size-small sr-size-name-mini" id="match-7604574-13" data-sr-lang="en" data-sr-handle="15"><div class="sr-content"><div class="sr-lmts-scoreboard-wraper sr-lmts-sid-1 sr-sid-1 sr-embedded">  <div class="sr-scoreboard srw-lmts-scoreboard-inner"> <div class="sr-result-wraper sr-result-fullscore sr-result-fullscore-embedded sr-result-wraper-p sr-result-soccer"> <div class="sr-status-info sr-matchheader-soccer"> <div class="sr-status-info-holder"> <div class="sr-status-info-wraper ">  <div class="sr-status-info-center">End</div>  </div> </div> </div> <div class="sr-score-separator"> </div> <div class="sr-team-home sr-team-side-left"> <div class="sr-team-name " title="Polonia"> <div class="sr-team-crests  ">       <div class="sr-crest"><img class="sr-crest-img sr-crest-home " src="https://ls.sportradar.com/ls/crest/small/114695.png" alt="" onload="SRLive.event.trigger('crest_loaded', { img: this, defaultUrl: 'https://ls.sportradar.com/clients/ssm/img/home-default-logo.png' }, false, 'common.crestmanager_10');"></div>   <span class="sr-full sr-team-loser sr-ltr-text">Polonia</span> <span class="sr-abbr sr-team-loser">PWA</span>  </div> </div> </div> <div class="sr-middle "> <div class="sr-middle-wrapper"> <div class="sr-result"> <div class="sr-result-left sr-result-home  sr-team-loser "> <div class="sr-result-value sr-home">3</div> </div> <div class="sr-separator">:</div> <div class="sr-result-right sr-result-away "> <div class="sr-result-value sr-away">7</div> </div> </div>  </div> </div> <div class="sr-team-away sr-team-side-right"> <div class="sr-team-name " title="Bialystok"> <div class="sr-team-crests  ">       <div class="sr-crest"><img class="sr-crest-img sr-crest-away " src="https://ls.sportradar.com/ls/crest/small/114683.png" alt="" onload="SRLive.event.trigger('crest_loaded', { img: this, defaultUrl: 'https://ls.sportradar.com/clients/ssm/img/away-default-logo.png' }, false, 'common.crestmanager_10');"></div>   <span class="sr-full sr-team-winner sr-ltr-text">Bialystok</span> <span class="sr-abbr sr-team-winner">JBI</span>  </div> </div> </div> </div> </div> </div></div></div> <div class="sr-odds-container sr-clearfix"><div id="odds-7604574-13" class="sr-odds-item sr-odd-large"></div></div>  </div>  <div class="sr-tournament-info sr-header-3 sr-clearfix"> <div class="sr-date sr-part">12 Apr, 2015</div> <div class="sr-sep sr-part">|</div> <div class="sr-flag sr-part"> <div class="sr-crest"> <img class="sr-crest-img sr-crest- " src="https://ls.sportradar.com/ls/crest/small/pl.png" alt=""> </div> </div> <div class="sr-name sr-part">CLJ,&nbsp;East&nbsp;|&nbsp;Matchday&nbsp;23</div> <div style="clear:both;" class=""></div> </div> <div class="sr-match-container sr-border " data-sr-matchid="6618937"> <div class="sr-match-container-inner sr-widget sr-widget-level-1 sr-widgets-matchheader sr-size-extra-small sr-size-small sr-size-name-mini" id="match-6618937-14" data-sr-lang="en" data-sr-handle="16"><div class="sr-content"><div class="sr-lmts-scoreboard-wraper sr-lmts-sid-1 sr-sid-1 sr-embedded">  <div class="sr-scoreboard srw-lmts-scoreboard-inner"> <div class="sr-result-wraper sr-result-fullscore sr-result-fullscore-embedded sr-result-wraper-p sr-result-soccer"> <div class="sr-status-info sr-matchheader-soccer"> <div class="sr-status-info-holder"> <div class="sr-status-info-wraper ">  <div class="sr-status-info-center">End</div>  </div> </div> </div> <div class="sr-score-separator"> </div> <div class="sr-team-home sr-team-side-left"> <div class="sr-team-name " title="Polonia"> <div class="sr-team-crests  ">       <div class="sr-crest"><img class="sr-crest-img sr-crest-home " src="https://ls.sportradar.com/ls/crest/small/114695.png" alt="" onload="SRLive.event.trigger('crest_loaded', { img: this, defaultUrl: 'https://ls.sportradar.com/clients/ssm/img/home-default-logo.png' }, false, 'common.crestmanager_10');"></div>   <span class="sr-full sr-team-winner sr-ltr-text">Polonia</span> <span class="sr-abbr sr-team-winner">PWA</span>  </div> </div> </div> <div class="sr-middle "> <div class="sr-middle-wrapper"> <div class="sr-result"> <div class="sr-result-left sr-result-home "> <div class="sr-result-value sr-home">3</div> </div> <div class="sr-separator">:</div> <div class="sr-result-right sr-result-away  sr-team-loser "> <div class="sr-result-value sr-away">2</div> </div> </div>  </div> </div> <div class="sr-team-away sr-team-side-right"> <div class="sr-team-name " title="Bialystok"> <div class="sr-team-crests  ">       <div class="sr-crest"><img class="sr-crest-img sr-crest-away " src="https://ls.sportradar.com/ls/crest/small/114683.png" alt="" onload="SRLive.event.trigger('crest_loaded', { img: this, defaultUrl: 'https://ls.sportradar.com/clients/ssm/img/away-default-logo.png' }, false, 'common.crestmanager_10');"></div>   <span class="sr-full sr-team-loser sr-ltr-text">Bialystok</span> <span class="sr-abbr sr-team-loser">JBI</span>  </div> </div> </div> </div> </div> </div></div></div> <div class="sr-odds-container sr-clearfix"><div id="odds-6618937-14" class="sr-odds-item sr-odd-large"></div></div>  </div>  </div>  </div></div><div class="sr-nano-scroller-pane" style="left: auto; display: none;"><div class="sr-nano-scroller-slider" style="height: 20px; transform: translate(0px, 0px);"></div></div></div></div><div class="sr-pill-pane" data-sr-uid="tabs-9-2" data-sr-id="2" data-sr-tabs-id="tabs-9"></div><div class="sr-pill-pane" data-sr-uid="tabs-9-3" data-sr-id="3" data-sr-tabs-id="tabs-9"></div></div> </div></div></div>
+      <div class="collapse-bar" onclick="toggleExpandWidget(35)" style="display: block;"></div>
+
+
+
+
+      <div id="5dca49f3-4699-e711-80c2-00155d0020b1" data-lip-event="5dca49f3-4699-e711-80c2-00155d0020b1" class="">
+
+
+        <div class="row" data-market="06e25f06-e7c8-e711-80c5-00155dc0af25" data-markettitle="Match Result (1 x 2)" data-markettype="00000000-0000-0000-da7a-000000040001" data-markettypecategory="00000000-0000-0000-da7a-000000580001">
+          <div id="06e25f06-e7c8-e711-80c5-00155dc0af25" data-value="Vuvuzela.Web.Models.Event.OutcomeGroupModel" class="">
+            <div class="row subheading-panel">
+              <div class="col-md-12 col-lg-12">
+                <div class="panel-left-header">
+                  <div class="h3">
+                    <div class="heading-panel-heading theFont" data-value="00000000-0000-0000-da7a-000000040001">
+                      Match Result (1 x 2)
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+            <div class="">
+              <div class="outcomeBtnLong">
+                <div class="outcomes-advancedbetting">
+                  <div id="07e25f06-e7c8-e711-80c5-00155dc0af25" name="07e25f06-e7c8-e711-80c5-00155dc0af25" data-sortindex="1" class="btn btn-group btn-bettingmatch   " onclick="outcomeButtonMultiMarketClick('07e25f06-e7c8-e711-80c5-00155dc0af25', '5dca49f3-4699-e711-80c2-00155d0020b1', 'actionBetslip', '00000000-0000-0000-da7a-000000040001', 'Bialystok', 'Match Result (1 x 2)', '1.5400', '00000000-0000-0000-da7a-000000580001')" data-markettypecategory="00000000-0000-0000-da7a-000000580001" data-lip-sbv="">
+                    <div class="outcome-title theOtherFont"><span class="">Bialystok</span></div>
+                    <div class="outcome-pricedecimal">1.54 </div>
+
+                  </div>
+                </div>
+              </div>
+              <div class="outcomeBtnShort">
+                <div class="outcomes-advancedbetting">
+                  <div id="08e25f06-e7c8-e711-80c5-00155dc0af25" name="08e25f06-e7c8-e711-80c5-00155dc0af25" data-sortindex="2" class="btn btn-group btn-bettingmatch    isSelected" onclick="outcomeButtonMultiMarketClick('08e25f06-e7c8-e711-80c5-00155dc0af25', '5dca49f3-4699-e711-80c2-00155d0020b1', 'actionBetslip', '00000000-0000-0000-da7a-000000040001', 'Draw', 'Match Result (1 x 2)', '4.2800', '00000000-0000-0000-da7a-000000580001')" data-markettypecategory="00000000-0000-0000-da7a-000000580001" data-lip-sbv="">
+                    <div class="outcome-title theOtherFont"><span class="">Draw</span></div>
+                    <div class="outcome-pricedecimal">4.28 </div>
+
+                  </div>
+                </div>
+              </div>
+              <div class="outcomeBtnLong">
+                <div class="outcomes-advancedbetting">
+                  <div id="09e25f06-e7c8-e711-80c5-00155dc0af25" name="09e25f06-e7c8-e711-80c5-00155dc0af25" data-sortindex="4" class="btn btn-group btn-bettingmatch   " onclick="outcomeButtonMultiMarketClick('09e25f06-e7c8-e711-80c5-00155dc0af25', '5dca49f3-4699-e711-80c2-00155d0020b1', 'actionBetslip', '00000000-0000-0000-da7a-000000040001', 'Polonia Warszawa', 'Match Result (1 x 2)', '4.5800', '00000000-0000-0000-da7a-000000580001')" data-markettypecategory="00000000-0000-0000-da7a-000000580001" data-lip-sbv="">
+                    <div class="outcome-title theOtherFont"><span class="">Polonia Warszawa</span></div>
+                    <div class="outcome-pricedecimal">4.58 </div>
+
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="row" data-market="0de25f06-e7c8-e711-80c5-00155dc0af25" data-markettitle="Double Chance" data-markettype="00000000-0000-0000-da7a-000000040008" data-markettypecategory="00000000-0000-0000-da7a-000000580001">
+          <div id="0de25f06-e7c8-e711-80c5-00155dc0af25" data-value="Vuvuzela.Web.Models.Event.OutcomeGroupModel" class="">
+            <div class="row subheading-panel">
+              <div class="col-md-12 col-lg-12">
+                <div class="panel-left-header">
+                  <div class="h3">
+                    <div class="heading-panel-heading theFont" data-value="00000000-0000-0000-da7a-000000040008">
+                      Double Chance
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+            <div class="">
+              <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                <div class="outcomes-advancedbetting">
+                  <div id="0ee25f06-e7c8-e711-80c5-00155dc0af25" name="0ee25f06-e7c8-e711-80c5-00155dc0af25" data-sortindex="1" class="btn btn-group btn-bettingmatch   " onclick="outcomeButtonMultiMarketClick('0ee25f06-e7c8-e711-80c5-00155dc0af25', '5dca49f3-4699-e711-80c2-00155d0020b1', 'actionBetslip', '00000000-0000-0000-da7a-000000040008', 'Bialystok or Draw', 'Double Chance', '1.1600', '00000000-0000-0000-da7a-000000580001')" data-markettypecategory="00000000-0000-0000-da7a-000000580001" data-lip-sbv="">
+                    <div class="outcome-title doublechance theOtherFont"><span class="">Bialystok</span></div>
+                    <div class="outcome-pricedecimal">1.16 </div>
+                    <div class="outcome-title doublechance theOtherFont"><span class="">Draw</span></div>
+
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                <div class="outcomes-advancedbetting">
+                  <div id="0fe25f06-e7c8-e711-80c5-00155dc0af25" name="0fe25f06-e7c8-e711-80c5-00155dc0af25" data-sortindex="2" class="btn btn-group btn-bettingmatch   " onclick="outcomeButtonMultiMarketClick('0fe25f06-e7c8-e711-80c5-00155dc0af25', '5dca49f3-4699-e711-80c2-00155d0020b1', 'actionBetslip', '00000000-0000-0000-da7a-000000040008', 'Bialystok or Polonia Warszawa', 'Double Chance', '1.1700', '00000000-0000-0000-da7a-000000580001')" data-markettypecategory="00000000-0000-0000-da7a-000000580001" data-lip-sbv="">
+                    <div class="outcome-title doublechance theOtherFont"><span class="">Bialystok</span></div>
+                    <div class="outcome-pricedecimal">1.17 </div>
+                    <div class="outcome-title doublechance theOtherFont"><span class="">Polonia Warszawa</span></div>
+
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                <div class="outcomes-advancedbetting">
+                  <div id="10e25f06-e7c8-e711-80c5-00155dc0af25" name="10e25f06-e7c8-e711-80c5-00155dc0af25" data-sortindex="3" class="btn btn-group btn-bettingmatch   " onclick="outcomeButtonMultiMarketClick('10e25f06-e7c8-e711-80c5-00155dc0af25', '5dca49f3-4699-e711-80c2-00155d0020b1', 'actionBetslip', '00000000-0000-0000-da7a-000000040008', 'Draw or Polonia Warszawa', 'Double Chance', '2.0500', '00000000-0000-0000-da7a-000000580001')" data-markettypecategory="00000000-0000-0000-da7a-000000580001" data-lip-sbv="">
+                    <div class="outcome-title doublechance theOtherFont"><span class="">Draw</span></div>
+                    <div class="outcome-pricedecimal">2.05 </div>
+                    <div class="outcome-title doublechance theOtherFont"><span class="">Polonia Warszawa</span></div>
+
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="row" data-market="3ce25f06-e7c8-e711-80c5-00155dc0af25" data-markettitle="Both Teams To Score" data-markettype="00000000-0000-0000-da7a-000000040005" data-markettypecategory="00000000-0000-0000-da7a-000000580001">
+          <div id="3ce25f06-e7c8-e711-80c5-00155dc0af25" data-value="Vuvuzela.Web.Models.Event.OutcomeGroupModel" class="">
+            <div class="row subheading-panel">
+              <div class="col-md-12 col-lg-12">
+                <div class="panel-left-header">
+                  <div class="h3">
+                    <div class="heading-panel-heading theFont" data-value="00000000-0000-0000-da7a-000000040005">
+                      Both Teams To Score
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+            <div class="">
+              <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 absolute-zero-pad">
+                <div class="outcomes-advancedbetting">
+                  <div id="3de25f06-e7c8-e711-80c5-00155dc0af25" name="3de25f06-e7c8-e711-80c5-00155dc0af25" data-sortindex="5" class="btn btn-group btn-bettingmatch   " onclick="outcomeButtonMultiMarketClick('3de25f06-e7c8-e711-80c5-00155dc0af25', '5dca49f3-4699-e711-80c2-00155d0020b1', 'actionBetslip', '00000000-0000-0000-da7a-000000040005', 'Yes', 'Both Teams To Score', '1.6400', '00000000-0000-0000-da7a-000000580001')" data-markettypecategory="00000000-0000-0000-da7a-000000580001" data-lip-sbv="">
+                    <div class="outcome-title theOtherFont"><span class="">Yes</span></div>
+                    <div class="outcome-pricedecimal">1.64 </div>
+
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 absolute-zero-pad">
+                <div class="outcomes-advancedbetting">
+                  <div id="3ee25f06-e7c8-e711-80c5-00155dc0af25" name="3ee25f06-e7c8-e711-80c5-00155dc0af25" data-sortindex="6" class="btn btn-group btn-bettingmatch   " onclick="outcomeButtonMultiMarketClick('3ee25f06-e7c8-e711-80c5-00155dc0af25', '5dca49f3-4699-e711-80c2-00155d0020b1', 'actionBetslip', '00000000-0000-0000-da7a-000000040005', 'No', 'Both Teams To Score', '2.0500', '00000000-0000-0000-da7a-000000580001')" data-markettypecategory="00000000-0000-0000-da7a-000000580001" data-lip-sbv="">
+                    <div class="outcome-title theOtherFont"><span class="">No</span></div>
+                    <div class="outcome-pricedecimal">2.05 </div>
+
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="row" data-market="d1e15f06-e7c8-e711-80c5-00155dc0af25" data-markettitle="European Handicap" data-markettype="00000000-0000-0000-da7a-000000040015" data-markettypecategory="00000000-0000-0000-da7a-000000580001">
+          <div id="d1e15f06-e7c8-e711-80c5-00155dc0af25" data-value="Vuvuzela.Web.Models.Event.OutcomeGroupModel" class="">
+            <div class="row subheading-panel">
+              <div class="col-md-12 col-lg-12">
+                <div class="panel-left-header">
+                  <div class="h3">
+                    <div class="heading-panel-heading theFont" data-value="00000000-0000-0000-da7a-000000040015">
+                      European Handicap
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+            <div class="">
+              <input id="selectedOutcomeValue" type="hidden" value="EMPTY" class="">
+              <select id="00000000-0000-0000-da7a-000000040015" class="mmddl ddlCorrectScore ddlCorrectScore " onfocus="onOutcomeDropDownFocus(this)" onchange="onOutcomeDropDownSelectMultiMarket(this, '5dca49f3-4699-e711-80c2-00155d0020b1', 'actionBetslip','d1e15f06-e7c8-e711-80c5-00155dc0af25', 'Bialystok', '2.4700', false, '00000000-0000-0000-da7a-000000040015')">
+
+                <option value="EMPTY" class=""> Make a selection</option>
+                <option id="d2e15f06-e7c8-e711-80c5-00155dc0af25" class="inner " data-sortindex="97" data-lip-value="d2e15f06-e7c8-e711-80c5-00155dc0af25" data-lip-pricedecimal="2.4700" data-lip-sbv="(0:1)" data-outcometitle="Bialystok" data-markettypecategory="00000000-0000-0000-da7a-000000580001" value="d2e15f06-e7c8-e711-80c5-00155dc0af25" onchange="onOutcomeDropDownSelectMultiMarket(this, '5dca49f3-4699-e711-80c2-00155d0020b1', 'actionBetslip','d1e15f06-e7c8-e711-80c5-00155dc0af25', 'Bialystok', '2.4700', false, '00000000-0000-0000-da7a-000000040015')">
+                  Bialystok (0:1) : 2.47
+                </option>
+                <option id="d3e15f06-e7c8-e711-80c5-00155dc0af25" class="inner " data-sortindex="98" data-lip-value="d3e15f06-e7c8-e711-80c5-00155dc0af25" data-lip-pricedecimal="3.7700" data-lip-sbv="(0:1)" data-outcometitle="Draw" data-markettypecategory="00000000-0000-0000-da7a-000000580001" value="d3e15f06-e7c8-e711-80c5-00155dc0af25" onchange="onOutcomeDropDownSelectMultiMarket(this, '5dca49f3-4699-e711-80c2-00155d0020b1', 'actionBetslip','d1e15f06-e7c8-e711-80c5-00155dc0af25', 'Draw', '3.7700', false, '00000000-0000-0000-da7a-000000040015')">
+                  Draw (0:1) : 3.77
+                </option>
+                <option id="d4e15f06-e7c8-e711-80c5-00155dc0af25" class="inner " data-sortindex="99" data-lip-value="d4e15f06-e7c8-e711-80c5-00155dc0af25" data-lip-pricedecimal="2.3300" data-lip-sbv="(0:1)" data-outcometitle="Polonia Warszawa" data-markettypecategory="00000000-0000-0000-da7a-000000580001" value="d4e15f06-e7c8-e711-80c5-00155dc0af25" onchange="onOutcomeDropDownSelectMultiMarket(this, '5dca49f3-4699-e711-80c2-00155d0020b1', 'actionBetslip','d1e15f06-e7c8-e711-80c5-00155dc0af25', 'Polonia Warszawa', '2.3300', false, '00000000-0000-0000-da7a-000000040015')">
+                  Polonia Warszawa (0:1) : 2.33
+                </option>
+                <option id="dbe15f06-e7c8-e711-80c5-00155dc0af25" class="inner " data-sortindex="97" data-lip-value="dbe15f06-e7c8-e711-80c5-00155dc0af25" data-lip-pricedecimal="4.6700" data-lip-sbv="(0:2)" data-outcometitle="Bialystok" data-markettypecategory="00000000-0000-0000-da7a-000000580001" value="dbe15f06-e7c8-e711-80c5-00155dc0af25" onchange="onOutcomeDropDownSelectMultiMarket(this, '5dca49f3-4699-e711-80c2-00155d0020b1', 'actionBetslip','d1e15f06-e7c8-e711-80c5-00155dc0af25', 'Bialystok', '4.6700', false, '00000000-0000-0000-da7a-000000040015')">
+                  Bialystok (0:2) : 4.67
+                </option>
+                <option id="dce15f06-e7c8-e711-80c5-00155dc0af25" class="inner " data-sortindex="98" data-lip-value="dce15f06-e7c8-e711-80c5-00155dc0af25" data-lip-pricedecimal="4.6800" data-lip-sbv="(0:2)" data-outcometitle="Draw" data-markettypecategory="00000000-0000-0000-da7a-000000580001" value="dce15f06-e7c8-e711-80c5-00155dc0af25" onchange="onOutcomeDropDownSelectMultiMarket(this, '5dca49f3-4699-e711-80c2-00155d0020b1', 'actionBetslip','d1e15f06-e7c8-e711-80c5-00155dc0af25', 'Draw', '4.6800', false, '00000000-0000-0000-da7a-000000040015')">
+                  Draw (0:2) : 4.68
+                </option>
+                <option id="dde15f06-e7c8-e711-80c5-00155dc0af25" class="inner " data-sortindex="99" data-lip-value="dde15f06-e7c8-e711-80c5-00155dc0af25" data-lip-pricedecimal="1.4900" data-lip-sbv="(0:2)" data-outcometitle="Polonia Warszawa" data-markettypecategory="00000000-0000-0000-da7a-000000580001" value="dde15f06-e7c8-e711-80c5-00155dc0af25" onchange="onOutcomeDropDownSelectMultiMarket(this, '5dca49f3-4699-e711-80c2-00155d0020b1', 'actionBetslip','d1e15f06-e7c8-e711-80c5-00155dc0af25', 'Polonia Warszawa', '1.4900', false, '00000000-0000-0000-da7a-000000040015')">
+                  Polonia Warszawa (0:2) : 1.49
+                </option>
+                <option id="d8e15f06-e7c8-e711-80c5-00155dc0af25" class="inner " data-sortindex="97" data-lip-value="d8e15f06-e7c8-e711-80c5-00155dc0af25" data-lip-pricedecimal="1.1700" data-lip-sbv="(1:0)" data-outcometitle="Bialystok" data-markettypecategory="00000000-0000-0000-da7a-000000580001" value="d8e15f06-e7c8-e711-80c5-00155dc0af25" onchange="onOutcomeDropDownSelectMultiMarket(this, '5dca49f3-4699-e711-80c2-00155d0020b1', 'actionBetslip','d1e15f06-e7c8-e711-80c5-00155dc0af25', 'Bialystok', '1.1700', false, '00000000-0000-0000-da7a-000000040015')">
+                  Bialystok (1:0) : 1.17
+                </option>
+                <option id="d9e15f06-e7c8-e711-80c5-00155dc0af25" class="inner " data-sortindex="98" data-lip-value="d9e15f06-e7c8-e711-80c5-00155dc0af25" data-lip-pricedecimal="6.3100" data-lip-sbv="(1:0)" data-outcometitle="Draw" data-markettypecategory="00000000-0000-0000-da7a-000000580001" value="d9e15f06-e7c8-e711-80c5-00155dc0af25" onchange="onOutcomeDropDownSelectMultiMarket(this, '5dca49f3-4699-e711-80c2-00155d0020b1', 'actionBetslip','d1e15f06-e7c8-e711-80c5-00155dc0af25', 'Draw', '6.3100', false, '00000000-0000-0000-da7a-000000040015')">
+                  Draw (1:0) : 6.31
+                </option>
+                <option id="dae15f06-e7c8-e711-80c5-00155dc0af25" class="inner " data-sortindex="99" data-lip-value="dae15f06-e7c8-e711-80c5-00155dc0af25" data-lip-pricedecimal="11.1400" data-lip-sbv="(1:0)" data-outcometitle="Polonia Warszawa" data-markettypecategory="00000000-0000-0000-da7a-000000580001" value="dae15f06-e7c8-e711-80c5-00155dc0af25" onchange="onOutcomeDropDownSelectMultiMarket(this, '5dca49f3-4699-e711-80c2-00155d0020b1', 'actionBetslip','d1e15f06-e7c8-e711-80c5-00155dc0af25', 'Polonia Warszawa', '11.1400', false, '00000000-0000-0000-da7a-000000040015')">
+                  Polonia Warszawa (1:0) : 11.14
+                </option>
+                <option id="d5e15f06-e7c8-e711-80c5-00155dc0af25" class="inner " data-sortindex="97" data-lip-value="d5e15f06-e7c8-e711-80c5-00155dc0af25" data-lip-pricedecimal="1.0400" data-lip-sbv="(2:0)" data-outcometitle="Bialystok" data-markettypecategory="00000000-0000-0000-da7a-000000580001" value="d5e15f06-e7c8-e711-80c5-00155dc0af25" onchange="onOutcomeDropDownSelectMultiMarket(this, '5dca49f3-4699-e711-80c2-00155d0020b1', 'actionBetslip','d1e15f06-e7c8-e711-80c5-00155dc0af25', 'Bialystok', '1.0400', false, '00000000-0000-0000-da7a-000000040015')">
+                  Bialystok (2:0) : 1.04
+                </option>
+                <option id="d6e15f06-e7c8-e711-80c5-00155dc0af25" class="inner " data-sortindex="98" data-lip-value="d6e15f06-e7c8-e711-80c5-00155dc0af25" data-lip-pricedecimal="10.4500" data-lip-sbv="(2:0)" data-outcometitle="Draw" data-markettypecategory="00000000-0000-0000-da7a-000000580001" value="d6e15f06-e7c8-e711-80c5-00155dc0af25" onchange="onOutcomeDropDownSelectMultiMarket(this, '5dca49f3-4699-e711-80c2-00155d0020b1', 'actionBetslip','d1e15f06-e7c8-e711-80c5-00155dc0af25', 'Draw', '10.4500', false, '00000000-0000-0000-da7a-000000040015')">
+                  Draw (2:0) : 10.45
+                </option>
+                <option id="d7e15f06-e7c8-e711-80c5-00155dc0af25" class="inner " data-sortindex="99" data-lip-value="d7e15f06-e7c8-e711-80c5-00155dc0af25" data-lip-pricedecimal="26.1000" data-lip-sbv="(2:0)" data-outcometitle="Polonia Warszawa" data-markettypecategory="00000000-0000-0000-da7a-000000580001" value="d7e15f06-e7c8-e711-80c5-00155dc0af25" onchange="onOutcomeDropDownSelectMultiMarket(this, '5dca49f3-4699-e711-80c2-00155d0020b1', 'actionBetslip','d1e15f06-e7c8-e711-80c5-00155dc0af25', 'Polonia Warszawa', '26.1000', false, '00000000-0000-0000-da7a-000000040015')">
+                  Polonia Warszawa (2:0) : 26.10
+                </option>
+              </select>
+
+            </div>
+          </div>
+        </div>
+        <div class="row" data-market="cee15f06-e7c8-e711-80c5-00155dc0af25" data-markettitle="Odd or Even Total" data-markettype="00000000-0000-0000-da7a-000000040014" data-markettypecategory="00000000-0000-0000-da7a-000000580001">
+          <div id="cee15f06-e7c8-e711-80c5-00155dc0af25" data-value="Vuvuzela.Web.Models.Event.OutcomeGroupModel" class="">
+            <div class="row subheading-panel">
+              <div class="col-md-12 col-lg-12">
+                <div class="panel-left-header">
+                  <div class="h3">
+                    <div class="heading-panel-heading theFont" data-value="00000000-0000-0000-da7a-000000040014">
+                      Odd or Even Total
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+            <div class="">
+              <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 absolute-zero-pad">
+                <div class="outcomes-advancedbetting">
+                  <div id="d0e15f06-e7c8-e711-80c5-00155dc0af25" name="d0e15f06-e7c8-e711-80c5-00155dc0af25" data-sortindex="1" class="btn btn-group btn-bettingmatch   " onclick="outcomeButtonMultiMarketClick('d0e15f06-e7c8-e711-80c5-00155dc0af25', '5dca49f3-4699-e711-80c2-00155d0020b1', 'actionBetslip', '00000000-0000-0000-da7a-000000040014', 'Even', 'Odd or Even Total', '1.8300', '00000000-0000-0000-da7a-000000580001')" data-markettypecategory="00000000-0000-0000-da7a-000000580001" data-lip-sbv="">
+                    <div class="outcome-title theOtherFont"><span class="">Even</span></div>
+                    <div class="outcome-pricedecimal">1.83 </div>
+
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 absolute-zero-pad">
+                <div class="outcomes-advancedbetting">
+                  <div id="cfe15f06-e7c8-e711-80c5-00155dc0af25" name="cfe15f06-e7c8-e711-80c5-00155dc0af25" data-sortindex="2" class="btn btn-group btn-bettingmatch   " onclick="outcomeButtonMultiMarketClick('cfe15f06-e7c8-e711-80c5-00155dc0af25', '5dca49f3-4699-e711-80c2-00155d0020b1', 'actionBetslip', '00000000-0000-0000-da7a-000000040014', 'Odd', 'Odd or Even Total', '1.8100', '00000000-0000-0000-da7a-000000580001')" data-markettypecategory="00000000-0000-0000-da7a-000000580001" data-lip-sbv="">
+                    <div class="outcome-title theOtherFont"><span class="">Odd</span></div>
+                    <div class="outcome-pricedecimal">1.81 </div>
+
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="row" data-market="e8e15f06-e7c8-e711-80c5-00155dc0af25" data-markettitle="Correct Score" data-markettype="00000000-0000-0000-da7a-000000040003" data-markettypecategory="00000000-0000-0000-da7a-000000580001">
+          <div id="e8e15f06-e7c8-e711-80c5-00155dc0af25" data-value="Vuvuzela.Web.Models.Event.OutcomeGroupModel" class="">
+            <div class="row subheading-panel">
+              <div class="col-md-12 col-lg-12">
+                <div class="panel-left-header">
+                  <div class="h3">
+                    <div class="heading-panel-heading theFont" data-value="00000000-0000-0000-da7a-000000040003">
+                      Correct Score
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+            <div class="">
+              <input id="selectedOutcomeValue" type="hidden" value="" class="">
+              <select id="00000000-0000-0000-da7a-000000040003" class="mmddl ddlCorrectScore ddlCorrectScore " onfocus="onOutcomeDropDownFocus(this)" onchange="onOutcomeDropDownSelectMultiMarket(this, '5dca49f3-4699-e711-80c2-00155d0020b1', 'actionBetslip','e8e15f06-e7c8-e711-80c5-00155dc0af25', 'Bialystok 1-0', '7.1900', false, '00000000-0000-0000-da7a-000000040003')">
+
+                <option value="EMPTY" class=""> Make a selection</option>
+                <option id="e9e15f06-e7c8-e711-80c5-00155dc0af25" class="inner " data-sortindex="10" data-lip-value="e9e15f06-e7c8-e711-80c5-00155dc0af25" data-lip-pricedecimal="7.1900" data-lip-sbv="" data-outcometitle="Bialystok 1-0" data-markettypecategory="00000000-0000-0000-da7a-000000580001" value="e9e15f06-e7c8-e711-80c5-00155dc0af25" onchange="onOutcomeDropDownSelectMultiMarket(this, '5dca49f3-4699-e711-80c2-00155d0020b1', 'actionBetslip','e8e15f06-e7c8-e711-80c5-00155dc0af25', 'Bialystok 1-0', '7.1900', false, '00000000-0000-0000-da7a-000000040003')">
+                  Bialystok 1-0  : 7.19
+                </option>
+                <option id="eae15f06-e7c8-e711-80c5-00155dc0af25" class="inner " data-sortindex="20" data-lip-value="eae15f06-e7c8-e711-80c5-00155dc0af25" data-lip-pricedecimal="7.0800" data-lip-sbv="" data-outcometitle="Bialystok 2-0" data-markettypecategory="00000000-0000-0000-da7a-000000580001" value="eae15f06-e7c8-e711-80c5-00155dc0af25" onchange="onOutcomeDropDownSelectMultiMarket(this, '5dca49f3-4699-e711-80c2-00155d0020b1', 'actionBetslip','e8e15f06-e7c8-e711-80c5-00155dc0af25', 'Bialystok 2-0', '7.0800', false, '00000000-0000-0000-da7a-000000040003')">
+                  Bialystok 2-0  : 7.08
+                </option>
+                <option id="ebe15f06-e7c8-e711-80c5-00155dc0af25" class="inner " data-sortindex="21" data-lip-value="ebe15f06-e7c8-e711-80c5-00155dc0af25" data-lip-pricedecimal="6.7900" data-lip-sbv="" data-outcometitle="Bialystok 2-1" data-markettypecategory="00000000-0000-0000-da7a-000000580001" value="ebe15f06-e7c8-e711-80c5-00155dc0af25" onchange="onOutcomeDropDownSelectMultiMarket(this, '5dca49f3-4699-e711-80c2-00155d0020b1', 'actionBetslip','e8e15f06-e7c8-e711-80c5-00155dc0af25', 'Bialystok 2-1', '6.7900', false, '00000000-0000-0000-da7a-000000040003')">
+                  Bialystok 2-1  : 6.79
+                </option>
+                <option id="ece15f06-e7c8-e711-80c5-00155dc0af25" class="inner " data-sortindex="30" data-lip-value="ece15f06-e7c8-e711-80c5-00155dc0af25" data-lip-pricedecimal="10.2900" data-lip-sbv="" data-outcometitle="Bialystok 3-0" data-markettypecategory="00000000-0000-0000-da7a-000000580001" value="ece15f06-e7c8-e711-80c5-00155dc0af25" onchange="onOutcomeDropDownSelectMultiMarket(this, '5dca49f3-4699-e711-80c2-00155d0020b1', 'actionBetslip','e8e15f06-e7c8-e711-80c5-00155dc0af25', 'Bialystok 3-0', '10.2900', false, '00000000-0000-0000-da7a-000000040003')">
+                  Bialystok 3-0  : 10.29
+                </option>
+                <option id="ede15f06-e7c8-e711-80c5-00155dc0af25" class="inner " data-sortindex="31" data-lip-value="ede15f06-e7c8-e711-80c5-00155dc0af25" data-lip-pricedecimal="9.8500" data-lip-sbv="" data-outcometitle="Bialystok 3-1" data-markettypecategory="00000000-0000-0000-da7a-000000580001" value="ede15f06-e7c8-e711-80c5-00155dc0af25" onchange="onOutcomeDropDownSelectMultiMarket(this, '5dca49f3-4699-e711-80c2-00155d0020b1', 'actionBetslip','e8e15f06-e7c8-e711-80c5-00155dc0af25', 'Bialystok 3-1', '9.8500', false, '00000000-0000-0000-da7a-000000040003')">
+                  Bialystok 3-1  : 9.85
+                </option>
+                <option id="eee15f06-e7c8-e711-80c5-00155dc0af25" class="inner " data-sortindex="32" data-lip-value="eee15f06-e7c8-e711-80c5-00155dc0af25" data-lip-pricedecimal="18.5100" data-lip-sbv="" data-outcometitle="Bialystok 3-2" data-markettypecategory="00000000-0000-0000-da7a-000000580001" value="eee15f06-e7c8-e711-80c5-00155dc0af25" onchange="onOutcomeDropDownSelectMultiMarket(this, '5dca49f3-4699-e711-80c2-00155d0020b1', 'actionBetslip','e8e15f06-e7c8-e711-80c5-00155dc0af25', 'Bialystok 3-2', '18.5100', false, '00000000-0000-0000-da7a-000000040003')">
+                  Bialystok 3-2  : 18.51
+                </option>
+                <option id="efe15f06-e7c8-e711-80c5-00155dc0af25" class="inner " data-sortindex="40" data-lip-value="efe15f06-e7c8-e711-80c5-00155dc0af25" data-lip-pricedecimal="19.9100" data-lip-sbv="" data-outcometitle="Bialystok 4-0" data-markettypecategory="00000000-0000-0000-da7a-000000580001" value="efe15f06-e7c8-e711-80c5-00155dc0af25" onchange="onOutcomeDropDownSelectMultiMarket(this, '5dca49f3-4699-e711-80c2-00155d0020b1', 'actionBetslip','e8e15f06-e7c8-e711-80c5-00155dc0af25', 'Bialystok 4-0', '19.9100', false, '00000000-0000-0000-da7a-000000040003')">
+                  Bialystok 4-0  : 19.91
+                </option>
+                <option id="f0e15f06-e7c8-e711-80c5-00155dc0af25" class="inner " data-sortindex="41" data-lip-value="f0e15f06-e7c8-e711-80c5-00155dc0af25" data-lip-pricedecimal="19.0500" data-lip-sbv="" data-outcometitle="Bialystok 4-1" data-markettypecategory="00000000-0000-0000-da7a-000000580001" value="f0e15f06-e7c8-e711-80c5-00155dc0af25" onchange="onOutcomeDropDownSelectMultiMarket(this, '5dca49f3-4699-e711-80c2-00155d0020b1', 'actionBetslip','e8e15f06-e7c8-e711-80c5-00155dc0af25', 'Bialystok 4-1', '19.0500', false, '00000000-0000-0000-da7a-000000040003')">
+                  Bialystok 4-1  : 19.05
+                </option>
+                <option id="f1e15f06-e7c8-e711-80c5-00155dc0af25" class="inner " data-sortindex="42" data-lip-value="f1e15f06-e7c8-e711-80c5-00155dc0af25" data-lip-pricedecimal="36.1000" data-lip-sbv="" data-outcometitle="Bialystok 4-2" data-markettypecategory="00000000-0000-0000-da7a-000000580001" value="f1e15f06-e7c8-e711-80c5-00155dc0af25" onchange="onOutcomeDropDownSelectMultiMarket(this, '5dca49f3-4699-e711-80c2-00155d0020b1', 'actionBetslip','e8e15f06-e7c8-e711-80c5-00155dc0af25', 'Bialystok 4-2', '36.1000', false, '00000000-0000-0000-da7a-000000040003')">
+                  Bialystok 4-2  : 36.10
+                </option>
+                <option id="f2e15f06-e7c8-e711-80c5-00155dc0af25" class="inner " data-sortindex="50" data-lip-value="f2e15f06-e7c8-e711-80c5-00155dc0af25" data-lip-pricedecimal="48.4800" data-lip-sbv="" data-outcometitle="Bialystok 5-0" data-markettypecategory="00000000-0000-0000-da7a-000000580001" value="f2e15f06-e7c8-e711-80c5-00155dc0af25" onchange="onOutcomeDropDownSelectMultiMarket(this, '5dca49f3-4699-e711-80c2-00155d0020b1', 'actionBetslip','e8e15f06-e7c8-e711-80c5-00155dc0af25', 'Bialystok 5-0', '48.4800', false, '00000000-0000-0000-da7a-000000040003')">
+                  Bialystok 5-0  : 48.48
+                </option>
+                <option id="f3e15f06-e7c8-e711-80c5-00155dc0af25" class="inner " data-sortindex="51" data-lip-value="f3e15f06-e7c8-e711-80c5-00155dc0af25" data-lip-pricedecimal="46.3700" data-lip-sbv="" data-outcometitle="Bialystok 5-1" data-markettypecategory="00000000-0000-0000-da7a-000000580001" value="f3e15f06-e7c8-e711-80c5-00155dc0af25" onchange="onOutcomeDropDownSelectMultiMarket(this, '5dca49f3-4699-e711-80c2-00155d0020b1', 'actionBetslip','e8e15f06-e7c8-e711-80c5-00155dc0af25', 'Bialystok 5-1', '46.3700', false, '00000000-0000-0000-da7a-000000040003')">
+                  Bialystok 5-1  : 46.37
+                </option>
+                <option id="f4e15f06-e7c8-e711-80c5-00155dc0af25" class="inner " data-sortindex="60" data-lip-value="f4e15f06-e7c8-e711-80c5-00155dc0af25" data-lip-pricedecimal="100.0000" data-lip-sbv="" data-outcometitle="Bialystok 6-0" data-markettypecategory="00000000-0000-0000-da7a-000000580001" value="f4e15f06-e7c8-e711-80c5-00155dc0af25" onchange="onOutcomeDropDownSelectMultiMarket(this, '5dca49f3-4699-e711-80c2-00155d0020b1', 'actionBetslip','e8e15f06-e7c8-e711-80c5-00155dc0af25', 'Bialystok 6-0', '100.0000', false, '00000000-0000-0000-da7a-000000040003')">
+                  Bialystok 6-0  : 100.00
+                </option>
+                <option id="f5e15f06-e7c8-e711-80c5-00155dc0af25" class="inner " data-sortindex="1000000" data-lip-value="f5e15f06-e7c8-e711-80c5-00155dc0af25" data-lip-pricedecimal="14.7800" data-lip-sbv="" data-outcometitle="Draw 0-0" data-markettypecategory="00000000-0000-0000-da7a-000000580001" value="f5e15f06-e7c8-e711-80c5-00155dc0af25" onchange="onOutcomeDropDownSelectMultiMarket(this, '5dca49f3-4699-e711-80c2-00155d0020b1', 'actionBetslip','e8e15f06-e7c8-e711-80c5-00155dc0af25', 'Draw 0-0', '14.7800', false, '00000000-0000-0000-da7a-000000040003')">
+                  Draw 0-0  : 14.78
+                </option>
+                <option id="f6e15f06-e7c8-e711-80c5-00155dc0af25" class="inner " data-sortindex="1000011" data-lip-value="f6e15f06-e7c8-e711-80c5-00155dc0af25" data-lip-pricedecimal="7.1400" data-lip-sbv="" data-outcometitle="Draw 1-1" data-markettypecategory="00000000-0000-0000-da7a-000000580001" value="f6e15f06-e7c8-e711-80c5-00155dc0af25" onchange="onOutcomeDropDownSelectMultiMarket(this, '5dca49f3-4699-e711-80c2-00155d0020b1', 'actionBetslip','e8e15f06-e7c8-e711-80c5-00155dc0af25', 'Draw 1-1', '7.1400', false, '00000000-0000-0000-da7a-000000040003')">
+                  Draw 1-1  : 7.14
+                </option>
+                <option id="f7e15f06-e7c8-e711-80c5-00155dc0af25" class="inner " data-sortindex="1000022" data-lip-value="f7e15f06-e7c8-e711-80c5-00155dc0af25" data-lip-pricedecimal="13.1400" data-lip-sbv="" data-outcometitle="Draw 2-2" data-markettypecategory="00000000-0000-0000-da7a-000000580001" value="f7e15f06-e7c8-e711-80c5-00155dc0af25" onchange="onOutcomeDropDownSelectMultiMarket(this, '5dca49f3-4699-e711-80c2-00155d0020b1', 'actionBetslip','e8e15f06-e7c8-e711-80c5-00155dc0af25', 'Draw 2-2', '13.1400', false, '00000000-0000-0000-da7a-000000040003')">
+                  Draw 2-2  : 13.14
+                </option>
+                <option id="f8e15f06-e7c8-e711-80c5-00155dc0af25" class="inner " data-sortindex="1000033" data-lip-value="f8e15f06-e7c8-e711-80c5-00155dc0af25" data-lip-pricedecimal="54.5000" data-lip-sbv="" data-outcometitle="Draw 3-3" data-markettypecategory="00000000-0000-0000-da7a-000000580001" value="f8e15f06-e7c8-e711-80c5-00155dc0af25" onchange="onOutcomeDropDownSelectMultiMarket(this, '5dca49f3-4699-e711-80c2-00155d0020b1', 'actionBetslip','e8e15f06-e7c8-e711-80c5-00155dc0af25', 'Draw 3-3', '54.5000', false, '00000000-0000-0000-da7a-000000040003')">
+                  Draw 3-3  : 54.50
+                </option>
+                <option id="f9e15f06-e7c8-e711-80c5-00155dc0af25" class="inner " data-sortindex="2000001" data-lip-value="f9e15f06-e7c8-e711-80c5-00155dc0af25" data-lip-pricedecimal="13.6200" data-lip-sbv="" data-outcometitle="Polonia Warszawa 0-1" data-markettypecategory="00000000-0000-0000-da7a-000000580001" value="f9e15f06-e7c8-e711-80c5-00155dc0af25" onchange="onOutcomeDropDownSelectMultiMarket(this, '5dca49f3-4699-e711-80c2-00155d0020b1', 'actionBetslip','e8e15f06-e7c8-e711-80c5-00155dc0af25', 'Polonia Warszawa 0-1', '13.6200', false, '00000000-0000-0000-da7a-000000040003')">
+                  Polonia Warszawa 0-1  : 13.62
+                </option>
+                <option id="fae15f06-e7c8-e711-80c5-00155dc0af25" class="inner " data-sortindex="2000002" data-lip-value="fae15f06-e7c8-e711-80c5-00155dc0af25" data-lip-pricedecimal="25.7300" data-lip-sbv="" data-outcometitle="Polonia Warszawa 0-2" data-markettypecategory="00000000-0000-0000-da7a-000000580001" value="fae15f06-e7c8-e711-80c5-00155dc0af25" onchange="onOutcomeDropDownSelectMultiMarket(this, '5dca49f3-4699-e711-80c2-00155d0020b1', 'actionBetslip','e8e15f06-e7c8-e711-80c5-00155dc0af25', 'Polonia Warszawa 0-2', '25.7300', false, '00000000-0000-0000-da7a-000000040003')">
+                  Polonia Warszawa 0-2  : 25.73
+                </option>
+                <option id="fce15f06-e7c8-e711-80c5-00155dc0af25" class="inner " data-sortindex="2000003" data-lip-value="fce15f06-e7c8-e711-80c5-00155dc0af25" data-lip-pricedecimal="73.1300" data-lip-sbv="" data-outcometitle="Polonia Warszawa 0-3" data-markettypecategory="00000000-0000-0000-da7a-000000580001" value="fce15f06-e7c8-e711-80c5-00155dc0af25" onchange="onOutcomeDropDownSelectMultiMarket(this, '5dca49f3-4699-e711-80c2-00155d0020b1', 'actionBetslip','e8e15f06-e7c8-e711-80c5-00155dc0af25', 'Polonia Warszawa 0-3', '73.1300', false, '00000000-0000-0000-da7a-000000040003')">
+                  Polonia Warszawa 0-3  : 73.13
+                </option>
+                <option id="ffe15f06-e7c8-e711-80c5-00155dc0af25" class="inner " data-sortindex="2000004" data-lip-value="ffe15f06-e7c8-e711-80c5-00155dc0af25" data-lip-pricedecimal="100.0000" data-lip-sbv="" data-outcometitle="Polonia Warszawa 0-4" data-markettypecategory="00000000-0000-0000-da7a-000000580001" value="ffe15f06-e7c8-e711-80c5-00155dc0af25" onchange="onOutcomeDropDownSelectMultiMarket(this, '5dca49f3-4699-e711-80c2-00155d0020b1', 'actionBetslip','e8e15f06-e7c8-e711-80c5-00155dc0af25', 'Polonia Warszawa 0-4', '100.0000', false, '00000000-0000-0000-da7a-000000040003')">
+                  Polonia Warszawa 0-4  : 100.00
+                </option>
+                <option id="02e25f06-e7c8-e711-80c5-00155dc0af25" class="inner " data-sortindex="2000005" data-lip-value="02e25f06-e7c8-e711-80c5-00155dc0af25" data-lip-pricedecimal="100.0000" data-lip-sbv="" data-outcometitle="Polonia Warszawa 0-5" data-markettypecategory="00000000-0000-0000-da7a-000000580001" value="02e25f06-e7c8-e711-80c5-00155dc0af25" onchange="onOutcomeDropDownSelectMultiMarket(this, '5dca49f3-4699-e711-80c2-00155d0020b1', 'actionBetslip','e8e15f06-e7c8-e711-80c5-00155dc0af25', 'Polonia Warszawa 0-5', '100.0000', false, '00000000-0000-0000-da7a-000000040003')">
+                  Polonia Warszawa 0-5  : 100.00
+                </option>
+                <option id="04e25f06-e7c8-e711-80c5-00155dc0af25" class="inner " data-sortindex="2000006" data-lip-value="04e25f06-e7c8-e711-80c5-00155dc0af25" data-lip-pricedecimal="100.0000" data-lip-sbv="" data-outcometitle="Polonia Warszawa 0-6" data-markettypecategory="00000000-0000-0000-da7a-000000580001" value="04e25f06-e7c8-e711-80c5-00155dc0af25" onchange="onOutcomeDropDownSelectMultiMarket(this, '5dca49f3-4699-e711-80c2-00155d0020b1', 'actionBetslip','e8e15f06-e7c8-e711-80c5-00155dc0af25', 'Polonia Warszawa 0-6', '100.0000', false, '00000000-0000-0000-da7a-000000040003')">
+                  Polonia Warszawa 0-6  : 100.00
+                </option>
+                <option id="fbe15f06-e7c8-e711-80c5-00155dc0af25" class="inner " data-sortindex="2000012" data-lip-value="fbe15f06-e7c8-e711-80c5-00155dc0af25" data-lip-pricedecimal="12.8400" data-lip-sbv="" data-outcometitle="Polonia Warszawa 1-2" data-markettypecategory="00000000-0000-0000-da7a-000000580001" value="fbe15f06-e7c8-e711-80c5-00155dc0af25" onchange="onOutcomeDropDownSelectMultiMarket(this, '5dca49f3-4699-e711-80c2-00155d0020b1', 'actionBetslip','e8e15f06-e7c8-e711-80c5-00155dc0af25', 'Polonia Warszawa 1-2', '12.8400', false, '00000000-0000-0000-da7a-000000040003')">
+                  Polonia Warszawa 1-2  : 12.84
+                </option>
+                <option id="fde15f06-e7c8-e711-80c5-00155dc0af25" class="inner " data-sortindex="2000013" data-lip-value="fde15f06-e7c8-e711-80c5-00155dc0af25" data-lip-pricedecimal="36.1800" data-lip-sbv="" data-outcometitle="Polonia Warszawa 1-3" data-markettypecategory="00000000-0000-0000-da7a-000000580001" value="fde15f06-e7c8-e711-80c5-00155dc0af25" onchange="onOutcomeDropDownSelectMultiMarket(this, '5dca49f3-4699-e711-80c2-00155d0020b1', 'actionBetslip','e8e15f06-e7c8-e711-80c5-00155dc0af25', 'Polonia Warszawa 1-3', '36.1800', false, '00000000-0000-0000-da7a-000000040003')">
+                  Polonia Warszawa 1-3  : 36.18
+                </option>
+                <option id="00e25f06-e7c8-e711-80c5-00155dc0af25" class="inner " data-sortindex="2000014" data-lip-value="00e25f06-e7c8-e711-80c5-00155dc0af25" data-lip-pricedecimal="100.0000" data-lip-sbv="" data-outcometitle="Polonia Warszawa 1-4" data-markettypecategory="00000000-0000-0000-da7a-000000580001" value="00e25f06-e7c8-e711-80c5-00155dc0af25" onchange="onOutcomeDropDownSelectMultiMarket(this, '5dca49f3-4699-e711-80c2-00155d0020b1', 'actionBetslip','e8e15f06-e7c8-e711-80c5-00155dc0af25', 'Polonia Warszawa 1-4', '100.0000', false, '00000000-0000-0000-da7a-000000040003')">
+                  Polonia Warszawa 1-4  : 100.00
+                </option>
+                <option id="03e25f06-e7c8-e711-80c5-00155dc0af25" class="inner " data-sortindex="2000015" data-lip-value="03e25f06-e7c8-e711-80c5-00155dc0af25" data-lip-pricedecimal="100.0000" data-lip-sbv="" data-outcometitle="Polonia Warszawa 1-5" data-markettypecategory="00000000-0000-0000-da7a-000000580001" value="03e25f06-e7c8-e711-80c5-00155dc0af25" onchange="onOutcomeDropDownSelectMultiMarket(this, '5dca49f3-4699-e711-80c2-00155d0020b1', 'actionBetslip','e8e15f06-e7c8-e711-80c5-00155dc0af25', 'Polonia Warszawa 1-5', '100.0000', false, '00000000-0000-0000-da7a-000000040003')">
+                  Polonia Warszawa 1-5  : 100.00
+                </option>
+                <option id="fee15f06-e7c8-e711-80c5-00155dc0af25" class="inner " data-sortindex="2000023" data-lip-value="fee15f06-e7c8-e711-80c5-00155dc0af25" data-lip-pricedecimal="35.6200" data-lip-sbv="" data-outcometitle="Polonia Warszawa 2-3" data-markettypecategory="00000000-0000-0000-da7a-000000580001" value="fee15f06-e7c8-e711-80c5-00155dc0af25" onchange="onOutcomeDropDownSelectMultiMarket(this, '5dca49f3-4699-e711-80c2-00155d0020b1', 'actionBetslip','e8e15f06-e7c8-e711-80c5-00155dc0af25', 'Polonia Warszawa 2-3', '35.6200', false, '00000000-0000-0000-da7a-000000040003')">
+                  Polonia Warszawa 2-3  : 35.62
+                </option>
+                <option id="01e25f06-e7c8-e711-80c5-00155dc0af25" class="inner " data-sortindex="2000024" data-lip-value="01e25f06-e7c8-e711-80c5-00155dc0af25" data-lip-pricedecimal="100.0000" data-lip-sbv="" data-outcometitle="Polonia Warszawa 2-4" data-markettypecategory="00000000-0000-0000-da7a-000000580001" value="01e25f06-e7c8-e711-80c5-00155dc0af25" onchange="onOutcomeDropDownSelectMultiMarket(this, '5dca49f3-4699-e711-80c2-00155d0020b1', 'actionBetslip','e8e15f06-e7c8-e711-80c5-00155dc0af25', 'Polonia Warszawa 2-4', '100.0000', false, '00000000-0000-0000-da7a-000000040003')">
+                  Polonia Warszawa 2-4  : 100.00
+                </option>
+                <option id="05e25f06-e7c8-e711-80c5-00155dc0af25" class="inner " data-sortindex="2147483647" data-lip-value="05e25f06-e7c8-e711-80c5-00155dc0af25" data-lip-pricedecimal="17.4100" data-lip-sbv="" data-outcometitle=" other" data-markettypecategory="00000000-0000-0000-da7a-000000580001" value="05e25f06-e7c8-e711-80c5-00155dc0af25" onchange="onOutcomeDropDownSelectMultiMarket(this, '5dca49f3-4699-e711-80c2-00155d0020b1', 'actionBetslip','e8e15f06-e7c8-e711-80c5-00155dc0af25', ' other', '17.4100', false, '00000000-0000-0000-da7a-000000040003')">
+                  other  : 17.41
+                </option>
+              </select>
+
+            </div>
+          </div>
+        </div>
+        <div class="row" data-market="f30b29a1-e7c8-e711-80c5-00155dc0af25" data-markettitle="Total Goals" data-markettype="00000000-0000-0000-da7a-000000040004" data-markettypecategory="00000000-0000-0000-da7a-000000580001">
+          <div id="f30b29a1-e7c8-e711-80c5-00155dc0af25" data-value="Vuvuzela.Web.Models.Event.OutcomeGroupModel" class="">
+            <div class="row subheading-panel">
+              <div class="col-md-12 col-lg-12">
+                <div class="panel-left-header">
+                  <div class="h3">
+                    <div class="heading-panel-heading theFont" data-value="00000000-0000-0000-da7a-000000040004">
+                      Total Goals
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+            <div class="">
+              <input id="selectedOutcomeValue" type="hidden" value="" class="">
+              <select id="00000000-0000-0000-da7a-000000040004" class="mmddl ddlCorrectScore ddlCorrectScore " onfocus="onOutcomeDropDownFocus(this)" onchange="onOutcomeDropDownSelectMultiMarket(this, '5dca49f3-4699-e711-80c2-00155d0020b1', 'actionBetslip','f30b29a1-e7c8-e711-80c5-00155dc0af25', '0', '18.0900', false, '00000000-0000-0000-da7a-000000040004')">
+
+                <option value="EMPTY" class=""> Make a selection</option>
+                <option id="f40b29a1-e7c8-e711-80c5-00155dc0af25" class="inner " data-sortindex="0" data-lip-value="f40b29a1-e7c8-e711-80c5-00155dc0af25" data-lip-pricedecimal="18.0900" data-lip-sbv="" data-outcometitle="0" data-markettypecategory="00000000-0000-0000-da7a-000000580001" value="f40b29a1-e7c8-e711-80c5-00155dc0af25" onchange="onOutcomeDropDownSelectMultiMarket(this, '5dca49f3-4699-e711-80c2-00155d0020b1', 'actionBetslip','f30b29a1-e7c8-e711-80c5-00155dc0af25', '0', '18.0900', false, '00000000-0000-0000-da7a-000000040004')">
+                  0  : 18.09
+                </option>
+                <option id="f50b29a1-e7c8-e711-80c5-00155dc0af25" class="inner " data-sortindex="0" data-lip-value="f50b29a1-e7c8-e711-80c5-00155dc0af25" data-lip-pricedecimal="5.7900" data-lip-sbv="" data-outcometitle="1" data-markettypecategory="00000000-0000-0000-da7a-000000580001" value="f50b29a1-e7c8-e711-80c5-00155dc0af25" onchange="onOutcomeDropDownSelectMultiMarket(this, '5dca49f3-4699-e711-80c2-00155d0020b1', 'actionBetslip','f30b29a1-e7c8-e711-80c5-00155dc0af25', '1', '5.7900', false, '00000000-0000-0000-da7a-000000040004')">
+                  1  : 5.79
+                </option>
+                <option id="f60b29a1-e7c8-e711-80c5-00155dc0af25" class="inner " data-sortindex="0" data-lip-value="f60b29a1-e7c8-e711-80c5-00155dc0af25" data-lip-pricedecimal="3.9000" data-lip-sbv="" data-outcometitle="2" data-markettypecategory="00000000-0000-0000-da7a-000000580001" value="f60b29a1-e7c8-e711-80c5-00155dc0af25" onchange="onOutcomeDropDownSelectMultiMarket(this, '5dca49f3-4699-e711-80c2-00155d0020b1', 'actionBetslip','f30b29a1-e7c8-e711-80c5-00155dc0af25', '2', '3.9000', false, '00000000-0000-0000-da7a-000000040004')">
+                  2  : 3.90
+                </option>
+                <option id="f70b29a1-e7c8-e711-80c5-00155dc0af25" class="inner " data-sortindex="0" data-lip-value="f70b29a1-e7c8-e711-80c5-00155dc0af25" data-lip-pricedecimal="3.7400" data-lip-sbv="" data-outcometitle="3" data-markettypecategory="00000000-0000-0000-da7a-000000580001" value="f70b29a1-e7c8-e711-80c5-00155dc0af25" onchange="onOutcomeDropDownSelectMultiMarket(this, '5dca49f3-4699-e711-80c2-00155d0020b1', 'actionBetslip','f30b29a1-e7c8-e711-80c5-00155dc0af25', '3', '3.7400', false, '00000000-0000-0000-da7a-000000040004')">
+                  3  : 3.74
+                </option>
+                <option id="f80b29a1-e7c8-e711-80c5-00155dc0af25" class="inner " data-sortindex="0" data-lip-value="f80b29a1-e7c8-e711-80c5-00155dc0af25" data-lip-pricedecimal="4.8600" data-lip-sbv="" data-outcometitle="4" data-markettypecategory="00000000-0000-0000-da7a-000000580001" value="f80b29a1-e7c8-e711-80c5-00155dc0af25" onchange="onOutcomeDropDownSelectMultiMarket(this, '5dca49f3-4699-e711-80c2-00155d0020b1', 'actionBetslip','f30b29a1-e7c8-e711-80c5-00155dc0af25', '4', '4.8600', false, '00000000-0000-0000-da7a-000000040004')">
+                  4  : 4.86
+                </option>
+                <option id="f90b29a1-e7c8-e711-80c5-00155dc0af25" class="inner " data-sortindex="0" data-lip-value="f90b29a1-e7c8-e711-80c5-00155dc0af25" data-lip-pricedecimal="7.6800" data-lip-sbv="" data-outcometitle="5" data-markettypecategory="00000000-0000-0000-da7a-000000580001" value="f90b29a1-e7c8-e711-80c5-00155dc0af25" onchange="onOutcomeDropDownSelectMultiMarket(this, '5dca49f3-4699-e711-80c2-00155d0020b1', 'actionBetslip','f30b29a1-e7c8-e711-80c5-00155dc0af25', '5', '7.6800', false, '00000000-0000-0000-da7a-000000040004')">
+                  5  : 7.68
+                </option>
+                <option id="fa0b29a1-e7c8-e711-80c5-00155dc0af25" class="inner " data-sortindex="0" data-lip-value="fa0b29a1-e7c8-e711-80c5-00155dc0af25" data-lip-pricedecimal="8.8800" data-lip-sbv="" data-outcometitle="6+" data-markettypecategory="00000000-0000-0000-da7a-000000580001" value="fa0b29a1-e7c8-e711-80c5-00155dc0af25" onchange="onOutcomeDropDownSelectMultiMarket(this, '5dca49f3-4699-e711-80c2-00155d0020b1', 'actionBetslip','f30b29a1-e7c8-e711-80c5-00155dc0af25', '6+', '8.8800', false, '00000000-0000-0000-da7a-000000040004')">
+                  6+  : 8.88
+                </option>
+              </select>
+
+            </div>
+          </div>
+        </div>
+        <div class="row" data-market="e00b29a1-e7c8-e711-80c5-00155dc0af25" data-markettitle="Clean Sheet Home Team " data-markettype="00000000-0000-0000-da7a-000000040023" data-markettypecategory="00000000-0000-0000-da7a-000000580001">
+          <div id="e00b29a1-e7c8-e711-80c5-00155dc0af25" data-value="Vuvuzela.Web.Models.Event.OutcomeGroupModel" class="">
+            <div class="row subheading-panel">
+              <div class="col-md-12 col-lg-12">
+                <div class="panel-left-header">
+                  <div class="h3">
+                    <div class="heading-panel-heading theFont" data-value="00000000-0000-0000-da7a-000000040023">
+                      Clean Sheet Home Team
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+            <div class="">
+              <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 absolute-zero-pad">
+                <div class="outcomes-advancedbetting">
+                  <div id="e10b29a1-e7c8-e711-80c5-00155dc0af25" name="e10b29a1-e7c8-e711-80c5-00155dc0af25" data-sortindex="5" class="btn btn-group btn-bettingmatch   " onclick="outcomeButtonMultiMarketClick('e10b29a1-e7c8-e711-80c5-00155dc0af25', '5dca49f3-4699-e711-80c2-00155d0020b1', 'actionBetslip', '00000000-0000-0000-da7a-000000040023', 'Yes', 'Clean Sheet Home Team ', '2.4700', '00000000-0000-0000-da7a-000000580001')" data-markettypecategory="00000000-0000-0000-da7a-000000580001" data-lip-sbv="">
+                    <div class="outcome-title theOtherFont"><span class="">Yes</span></div>
+                    <div class="outcome-pricedecimal">2.47 </div>
+
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 absolute-zero-pad">
+                <div class="outcomes-advancedbetting">
+                  <div id="e20b29a1-e7c8-e711-80c5-00155dc0af25" name="e20b29a1-e7c8-e711-80c5-00155dc0af25" data-sortindex="6" class="btn btn-group btn-bettingmatch   " onclick="outcomeButtonMultiMarketClick('e20b29a1-e7c8-e711-80c5-00155dc0af25', '5dca49f3-4699-e711-80c2-00155d0020b1', 'actionBetslip', '00000000-0000-0000-da7a-000000040023', 'No', 'Clean Sheet Home Team ', '1.4400', '00000000-0000-0000-da7a-000000580001')" data-markettypecategory="00000000-0000-0000-da7a-000000580001" data-lip-sbv="">
+                    <div class="outcome-title theOtherFont"><span class="">No</span></div>
+                    <div class="outcome-pricedecimal">1.44 </div>
+
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="row" data-market="eb0b29a1-e7c8-e711-80c5-00155dc0af25" data-markettitle="Clean Sheet Away Team " data-markettype="00000000-0000-0000-da7a-000000040026" data-markettypecategory="00000000-0000-0000-da7a-000000580001">
+          <div id="eb0b29a1-e7c8-e711-80c5-00155dc0af25" data-value="Vuvuzela.Web.Models.Event.OutcomeGroupModel" class="">
+            <div class="row subheading-panel">
+              <div class="col-md-12 col-lg-12">
+                <div class="panel-left-header">
+                  <div class="h3">
+                    <div class="heading-panel-heading theFont" data-value="00000000-0000-0000-da7a-000000040026">
+                      Clean Sheet Away Team
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+            <div class="">
+              <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 absolute-zero-pad">
+                <div class="outcomes-advancedbetting">
+                  <div id="ec0b29a1-e7c8-e711-80c5-00155dc0af25" name="ec0b29a1-e7c8-e711-80c5-00155dc0af25" data-sortindex="5" class="btn btn-group btn-bettingmatch   " onclick="outcomeButtonMultiMarketClick('ec0b29a1-e7c8-e711-80c5-00155dc0af25', '5dca49f3-4699-e711-80c2-00155d0020b1', 'actionBetslip', '00000000-0000-0000-da7a-000000040026', 'Yes', 'Clean Sheet Away Team ', '5.3000', '00000000-0000-0000-da7a-000000580001')" data-markettypecategory="00000000-0000-0000-da7a-000000580001" data-lip-sbv="">
+                    <div class="outcome-title theOtherFont"><span class="">Yes</span></div>
+                    <div class="outcome-pricedecimal">5.30 </div>
+
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 absolute-zero-pad">
+                <div class="outcomes-advancedbetting">
+                  <div id="ed0b29a1-e7c8-e711-80c5-00155dc0af25" name="ed0b29a1-e7c8-e711-80c5-00155dc0af25" data-sortindex="6" class="btn btn-group btn-bettingmatch   " onclick="outcomeButtonMultiMarketClick('ed0b29a1-e7c8-e711-80c5-00155dc0af25', '5dca49f3-4699-e711-80c2-00155d0020b1', 'actionBetslip', '00000000-0000-0000-da7a-000000040026', 'No', 'Clean Sheet Away Team ', '1.1000', '00000000-0000-0000-da7a-000000580001')" data-markettypecategory="00000000-0000-0000-da7a-000000580001" data-lip-sbv="">
+                    <div class="outcome-title theOtherFont"><span class="">No</span></div>
+                    <div class="outcome-pricedecimal">1.10 </div>
+
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="row" data-market="e5e15f06-e7c8-e711-80c5-00155dc0af25" data-markettitle="Draw No Bet" data-markettype="00000000-0000-0000-da7a-000000040082" data-markettypecategory="00000000-0000-0000-da7a-000000580001">
+          <div id="e5e15f06-e7c8-e711-80c5-00155dc0af25" data-value="Vuvuzela.Web.Models.Event.OutcomeGroupModel" class="">
+            <div class="row subheading-panel">
+              <div class="col-md-12 col-lg-12">
+                <div class="panel-left-header">
+                  <div class="h3">
+                    <div class="heading-panel-heading theFont" data-value="00000000-0000-0000-da7a-000000040082">
+                      Draw No Bet
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+            <div class="">
+              <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 absolute-zero-pad">
+                <div class="outcomes-advancedbetting">
+                  <div id="e6e15f06-e7c8-e711-80c5-00155dc0af25" name="e6e15f06-e7c8-e711-80c5-00155dc0af25" data-sortindex="0" class="btn btn-group btn-bettingmatch   " onclick="outcomeButtonMultiMarketClick('e6e15f06-e7c8-e711-80c5-00155dc0af25', '5dca49f3-4699-e711-80c2-00155d0020b1', 'actionBetslip', '00000000-0000-0000-da7a-000000040082', '1', 'Draw No Bet', '1.2400', '00000000-0000-0000-da7a-000000580001')" data-markettypecategory="00000000-0000-0000-da7a-000000580001" data-lip-sbv="">
+                    <div class="outcome-title theOtherFont"><span class="">1</span></div>
+                    <div class="outcome-pricedecimal">1.24 </div>
+
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 absolute-zero-pad">
+                <div class="outcomes-advancedbetting">
+                  <div id="e7e15f06-e7c8-e711-80c5-00155dc0af25" name="e7e15f06-e7c8-e711-80c5-00155dc0af25" data-sortindex="0" class="btn btn-group btn-bettingmatch   " onclick="outcomeButtonMultiMarketClick('e7e15f06-e7c8-e711-80c5-00155dc0af25', '5dca49f3-4699-e711-80c2-00155d0020b1', 'actionBetslip', '00000000-0000-0000-da7a-000000040082', '2', 'Draw No Bet', '3.4200', '00000000-0000-0000-da7a-000000580001')" data-markettypecategory="00000000-0000-0000-da7a-000000580001" data-lip-sbv="">
+                    <div class="outcome-title theOtherFont"><span class="">2</span></div>
+                    <div class="outcome-pricedecimal">3.42 </div>
+
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+    </div>
+
+    <script type="text/javascript">
+    showOverlay();
+
+    $(document).ready(function () {
+      if (window.location.pathname === "/Event/InPlay" || window.location.pathname === "/Event/LiveSport/" || (window.location.pathname === "/Bet/EventMultiMarket" && $('#multi-head').hasClass('inPlayBg'))) {
+        $('#sb_id.active, #mb_id.active, .betslip-trapezoid, #placeCashBet, #removeAllOutcomesBtn, #betslipBtn, #BetslipBtn, #placeFreeBet').addClass("liveInPlayClr");
+      }
+    });
+
+    var widgetType = "widgets.matchhead2head";
+    if (false == true) {
+      widgetType = "widgets.lmts";
+    }
+
+    SRConfig = {
+      on: {
+        srlive_initialized: function () {
+          SRLive.addWidget({
+            name: widgetType,//matchhead2head
+            config: {
+              container: '.lmt-container',
+              showTitle: false,
+              matchId: 12243960,
+              showMomentum: false,
+              sidebarLayout: 'bottom',
+              pitchCrowd: true,
+              collapse_startCollapsed: true,
+              sidebarLayout: 'dynamic'
+            },
+            callback: function () {
+              if (false != true) {
+                $('.sr-content').css({'height':'35px', 'overflow':'hidden'});
+              }
+              $('.collapse-bar').show();
+              closeOverlay();
+            }
+          });
+        }
+      }
+    };
+    (function (d, s, id) {
+
+      var js, h = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) { return; }
+      js = d.createElement(s); js.id = id; js.async = true;
+      js.setAttribute("data-autoInit", true);
+      js.src = "https://cs.betradar.com/ls/widgets/?/betwaykenya/en/Africa:Johannesburg/widgetloader/widgets";
+      h.parentNode.insertBefore(js, h);
+
+    }(document, 'script', 'sr-wl'));
+
+    function toggleExpandWidget(height) {
+
+      if ($('.sr-content').height() != height) {
+        $('.sr-content').animate({'height':height}, 'slow');
+        $('.collapse-bar').removeClass('expandedBar');
+        anchorToTop();
+      }
+      else {
+        $('.sr-content').css({'height':'100%'});
+        $('.collapse-bar').addClass('expandedBar');
+      }
+    }
+    </script>
+
+  </div>
+
+</body>
+</html>

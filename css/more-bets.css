@@ -1,0 +1,73 @@
+.subheading-panel {
+  color: #fff;
+  background-color: #616161;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.row {
+  display: block;
+  clear: both;
+  overflow: hidden;
+}
+
+.outcomes-advancedbetting {
+    width: 101%;
+}
+
+#MultiMarket .outcome-title {
+    float: left;
+}
+
+#MultiMarket select {
+  padding: 10px;
+  width: 100%;
+  border: none;
+  box-shadow: none;
+}
+
+#MultiMarket .btn-group {
+  margin: 0;
+  float: left;
+  width: 33%;
+  border: 1px solid #FFF;
+}
+
+#MultiMarket .btn-breadcrumb {
+    width: 100%;
+}
+
+.btn-bettingmatch .outcome-title span {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: left;
+}
+
+.heading-panel .panel-left-header {
+    padding: 0 1em;
+    color: #FFF;
+    font-weight: bold;
+    display: block;
+    clear: both;
+    overflow: hidden;
+    background-color: #439536;
+}
+
+.heading-multimarket {
+  padding: 1em 0;
+}
+.heading-multimarket .date-heading,
+.heading-multimarket .event-heading {
+  color: #FFF;
+  font-family: Helvetica;
+}
+.heading-multimarket .date-heading {
+  font-size: 12px;
+}
+
+.heading-multimarket .event-heading {
+  font-size: 14px;
+}
